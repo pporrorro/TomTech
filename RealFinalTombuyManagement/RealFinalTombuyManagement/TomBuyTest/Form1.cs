@@ -12,6 +12,7 @@ namespace TomBuyTest//물품 재고관리 현황
 {
     public partial class Form1 : Form
     {
+        //
 
 
         private ProductInfo pi = new ProductInfo();
