@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SecondTombuyScreen
+namespace SecondTombuyScreen//디자인 테스트
+
 {
     internal class ProductInfo
     {
