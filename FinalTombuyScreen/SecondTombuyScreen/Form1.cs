@@ -186,7 +186,7 @@ namespace SecondTombuyScreen //구매자 화면
             if (iRSalePrice > 0)
             {
                 sOrderList += $"면도기 장바구니에 담은개수 : {numCount6.Value} , 구매 금액 : {iRSalePrice} :  \r\n";
-                sOrderList += $"면도기 누적 장바구니에 담은개수 : {pi.oiRLeftC}, 면도기의 누적 구매금액 :{iKSalePrice * pi.oiRLeftC}  \r\n";
+                sOrderList += $"면도기 누적 장바구니에 담은개수 : {pi.oiRLeftC}, 면도기의 누적 구매금액 :{iRSalePrice * pi.oiRLeftC}  \r\n";
 
                 isOrder = true;
             }
