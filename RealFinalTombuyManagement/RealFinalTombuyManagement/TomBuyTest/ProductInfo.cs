@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace TomBuyTest//물품 재고관리 현황
 {
+    
     internal class ProductInfo
     {
         //갯수//총 재고 개수
-        public int iKLeftC = 0;   
-        public int iWLeftC = 0;   
-        public int iELeftC = 0;   
-        public int iALeftC = 0;   
-        public int iBLeftC = 0;   
-        public int iRLeftC = 0;   
+        public int iKLeftC = 0;// KF94마스크의 재고 개수   
+        public int iWLeftC = 0;// 물티슈의 재고 개수   
+        public int iELeftC = 0;// 이어폰의 재고 개수   
+        public int iALeftC = 0;// 방향제의 재고 개수   
+        public int iBLeftC = 0;// 건전지의 재고 개수   
+        public int iRLeftC = 0;// 면도기의 재고 개수   
 
         //가격
         public int viKLeftC = 0;  
