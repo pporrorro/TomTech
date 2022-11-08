@@ -49,7 +49,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.vlblEarphoneLeftCount = new System.Windows.Forms.Label();
             this.numCount3 = new System.Windows.Forms.NumericUpDown();
-            this.txtOrderList = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -289,15 +288,6 @@
             this.numCount3.Name = "numCount3";
             this.numCount3.Size = new System.Drawing.Size(60, 26);
             this.numCount3.TabIndex = 75;
-            // 
-            // txtOrderList
-            // 
-            this.txtOrderList.Location = new System.Drawing.Point(664, 263);
-            this.txtOrderList.Multiline = true;
-            this.txtOrderList.Name = "txtOrderList";
-            this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOrderList.Size = new System.Drawing.Size(500, 300);
-            this.txtOrderList.TabIndex = 87;
             // 
             // label3
             // 
@@ -578,7 +568,6 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.txtOrderList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.btnOrderbasketCancel);
@@ -644,7 +633,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label vlblEarphoneLeftCount;
         private System.Windows.Forms.NumericUpDown numCount3;
-        private System.Windows.Forms.TextBox txtOrderList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button1;
