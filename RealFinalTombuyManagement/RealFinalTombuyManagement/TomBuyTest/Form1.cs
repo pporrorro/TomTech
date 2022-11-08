@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TomBuyTest//물품 재고관리 현황
+
+//물품 재고관리 현황
+namespace TomBuyTest
 {
     public partial class Form1 : Form
     {
-        //
+        
 
 
         private ProductInfo pi = new ProductInfo();
