@@ -76,6 +76,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount6)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -319,7 +320,7 @@
             this.groupBox7.Size = new System.Drawing.Size(499, 184);
             this.groupBox7.TabIndex = 95;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "반출 정보";
+            this.groupBox7.Text = "구매자 정보";
             // 
             // button1
             // 
@@ -360,7 +361,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "수신지";
+            this.label7.Text = "구매자";
             // 
             // btnOrderbasketCancel
             // 
@@ -552,11 +553,21 @@
             this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(943, 576);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(221, 42);
+            this.button2.TabIndex = 105;
+            this.button2.Text = "구매하기";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 668);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -660,6 +671,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 
