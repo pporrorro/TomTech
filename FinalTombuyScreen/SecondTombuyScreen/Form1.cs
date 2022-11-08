@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SecondTombuyScreen
-{   //
+namespace SecondTombuyScreen //구매자 화면
+{   
     public partial class Form1 : Form
     {
         private int iOrderPrice = 0;                  // 총 결제금액 
