@@ -10,12 +10,12 @@ namespace SecondTombuyScreen//디자인 테스트
     internal class ProductInfo
     {
         //갯수//총 재고 개수
-        public int iKLeftC = 0;
-        public int iWLeftC = 0;
-        public int iELeftC = 0;
-        public int iALeftC = 0;
-        public int iBLeftC = 0;
-        public int iRLeftC = 0;
+        public int iKLeftC = 0;// kf94마스크의 총 재고 개수
+        public int iWLeftC = 0;// 물티슈의 총 재고 개수
+        public int iELeftC = 0;// 이어폰의 총 재고 개수
+        public int iALeftC = 0;// 방향제의 총 재고 개수
+        public int iBLeftC = 0;// 건전지의 총 재고 개수
+        public int iRLeftC = 0;// 면도기의 총 재고 개수
 
         //가격
         public int viKLeftC = 0;

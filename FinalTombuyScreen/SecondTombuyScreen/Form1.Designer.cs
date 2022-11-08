@@ -52,7 +52,7 @@
             this.txtOrderList = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnBuyerinformation = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount6)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -310,7 +310,7 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.button1);
+            this.groupBox7.Controls.Add(this.btnBuyerinformation);
             this.groupBox7.Controls.Add(this.textBox2);
             this.groupBox7.Controls.Add(this.textBox1);
             this.groupBox7.Controls.Add(this.label4);
@@ -322,14 +322,15 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "구매자 정보";
             // 
-            // button1
+            // btnBuyerinformation
             // 
-            this.button1.Location = new System.Drawing.Point(77, 119);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "입력";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnBuyerinformation.Location = new System.Drawing.Point(77, 119);
+            this.btnBuyerinformation.Name = "btnBuyerinformation";
+            this.btnBuyerinformation.Size = new System.Drawing.Size(152, 48);
+            this.btnBuyerinformation.TabIndex = 4;
+            this.btnBuyerinformation.Text = "입력";
+            this.btnBuyerinformation.UseVisualStyleBackColor = true;
+            this.btnBuyerinformation.Click += new System.EventHandler(this.btnBuyerinformation_Click);
             // 
             // textBox2
             // 
@@ -365,7 +366,7 @@
             // 
             // btnOrderbasketCancel
             // 
-            this.btnOrderbasketCancel.Location = new System.Drawing.Point(351, 574);
+            this.btnOrderbasketCancel.Location = new System.Drawing.Point(348, 592);
             this.btnOrderbasketCancel.Name = "btnOrderbasketCancel";
             this.btnOrderbasketCancel.Size = new System.Drawing.Size(194, 43);
             this.btnOrderbasketCancel.TabIndex = 94;
@@ -375,7 +376,7 @@
             // 
             // btnShowOrderbasket
             // 
-            this.btnShowOrderbasket.Location = new System.Drawing.Point(113, 576);
+            this.btnShowOrderbasket.Location = new System.Drawing.Point(110, 594);
             this.btnShowOrderbasket.Name = "btnShowOrderbasket";
             this.btnShowOrderbasket.Size = new System.Drawing.Size(221, 42);
             this.btnShowOrderbasket.TabIndex = 93;
@@ -553,21 +554,22 @@
             this.pictureBox1.TabIndex = 99;
             this.pictureBox1.TabStop = false;
             // 
-            // button2
+            // btnBuy
             // 
-            this.button2.Location = new System.Drawing.Point(943, 576);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(221, 42);
-            this.button2.TabIndex = 105;
-            this.button2.Text = "구매하기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnBuy.Location = new System.Drawing.Point(943, 576);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(221, 42);
+            this.btnBuy.TabIndex = 105;
+            this.btnBuy.Text = "구매하기";
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1204, 668);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -647,7 +649,7 @@
         private System.Windows.Forms.TextBox txtOrderList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBuyerinformation;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
@@ -671,7 +673,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuy;
     }
 }
 

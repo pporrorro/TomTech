@@ -12,7 +12,15 @@ namespace SecondTombuyScreen //구매자 화면
 {   
     public partial class Form1 : Form
     {
-        private int iOrderPrice = 0;                  // 총 결제금액 
+
+        //int iKLeftC = 0; kf94마스크의 총 재고 개수
+        //int iWLeftC = 0; 물티슈의 총 재고 개수
+        //int iELeftC = 0; 이어폰의 총 재고 개수
+        //int iALeftC = 0; 방향제의 총 재고 개수
+        //int iBLeftC = 0; 건전지의 총 재고 개수
+        //int iRLeftC = 0; 면도기의 총 재고 개수
+
+         
 
         private ProductInfo pi = new ProductInfo();
 
@@ -25,7 +33,17 @@ namespace SecondTombuyScreen //구매자 화면
         private int iBSalePrice = 0;
         private int iRSalePrice = 0;
 
+        private int iOrderPrice = 0;   // 총 결제금액
 
+        //각 품목 누적 구매 금액
+        private int iTKSalePrice = 0; //마스크의 누적 구매금액 :{iKSalePrice(마스크 금액) * pi.oiKLeftC(마스크 주문수량)}
+        private int iTWSalePrice = 0; //물티슈의 누적 구매금액 :{iWSalePrice * pi.oiWLeftC}
+        private int iTESalePrice = 0; //이어폰의 누적 구매금액 :{iESalePrice * pi.oiELeftC}
+        private int iTASalePrice = 0; //방향제의 누적 구매금액 :{iASalePrice * pi.oiALeftC}
+        private int iTBSalePrice = 0; //건전지의 누적 구매금액 :{iBSalePrice * pi.oiBLeftC}
+        private int iTRSalePrice = 0; //면도기의 누적 구매금액 :{iRSalePrice * pi.oiRLeftC}
+
+        
         //장바구니에 담은 내역
         string sOrderList;
 
@@ -142,51 +160,42 @@ namespace SecondTombuyScreen //구매자 화면
 
             bool isOrder = false;
 
-            sOrderList = "----------------------------- 장바구니에 담은 내역 ----------------------------- \r\n";
+            sOrderList = "------------------------------------------------------------------------ \r\n";
 
 
             if (iKSalePrice > 0)
             {
-                sOrderList += $"마스크 장바구니에 담은개수 : {numCount1.Value} , 구매 금액 : {iKSalePrice} :  \r\n";
-                sOrderList += $"마스크 누적 장바구니에 담은개수 : {pi.oiKLeftC}, 마스크의 누적 구매금액 :{iKSalePrice * pi.oiKLeftC}  \r\n";
-
+                sOrderList += $" 장바구니에 담은 마스크 개수 : {numCount1.Value} , 담은 마스크의 총개수 : {pi.oiKLeftC}   \r\n";
 
                 isOrder = true;
-
-
             }
             if (iWSalePrice > 0)
             {
-                sOrderList += $"물티슈 장바구니에 담은개수 : {numCount2.Value} , 구매 금액 : {iWSalePrice} :  \r\n";
-                sOrderList += $"물티슈 누적 장바구니에 담은개수 : {pi.oiWLeftC}, 물티슈의 누적 구매금액 :{iWSalePrice * pi.oiWLeftC}  \r\n";
+                sOrderList += $" 장바구니에 담은 물티슈 개수 : {numCount2.Value} , 담은 물티슈의 총개수 : {pi.oiWLeftC}   \r\n";
 
                 isOrder = true;
             }
             if (iESalePrice > 0)
             {
-                sOrderList += $"이어폰 장바구니에 담은개수 : {numCount3.Value} , 구매 금액 : {iESalePrice} :  \r\n";
-                sOrderList += $"이어폰 누적 장바구니에 담은개수 : {pi.oiELeftC}, 이어폰의 누적 구매금액 :{iESalePrice * pi.oiELeftC}  \r\n";
+                sOrderList += $" 장바구니에 담은 이어폰 개수 : {numCount3.Value} , 담은 이어폰의 총개수 : {pi.oiELeftC}   \r\n";
 
                 isOrder = true;
             }
             if (iASalePrice > 0)
             {
-                sOrderList += $"방향제 장바구니에 담은개수 : {numCount4.Value} , 구매 금액 : {iASalePrice} :  \r\n";
-                sOrderList += $"방향제 누적 장바구니에 담은개수 : {pi.oiALeftC}, 방향제의 누적 구매금액 :{iASalePrice * pi.oiALeftC}  \r\n";
+                sOrderList += $" 장바구니에 담은 방향제 개수 : {numCount4.Value} , 담은 방향제의 총개수 : {pi.oiALeftC}   \r\n";
 
                 isOrder = true;
             }
             if (iBSalePrice > 0)
             {
-                sOrderList += $"건전지 장바구니에 담은개수 : {numCount5.Value} , 구매 금액 : {iBSalePrice} :  \r\n";
-                sOrderList += $"건전지 누적 장바구니에 담은개수 : {pi.oiBLeftC}, 건전지의 누적 구매금액 :{iBSalePrice * pi.oiBLeftC}  \r\n";
+                sOrderList += $" 장바구니에 담은 건전지 개수 : {numCount5.Value} , 담은 건전지의 총개수 : {pi.oiBLeftC}   \r\n";
 
                 isOrder = true;
             }
             if (iRSalePrice > 0)
             {
-                sOrderList += $"면도기 장바구니에 담은개수 : {numCount6.Value} , 구매 금액 : {iRSalePrice} :  \r\n";
-                sOrderList += $"면도기 누적 장바구니에 담은개수 : {pi.oiRLeftC}, 면도기의 누적 구매금액 :{iRSalePrice * pi.oiRLeftC}  \r\n";
+                sOrderList += $" 장바구니에 담은 면도기 개수 : {numCount6.Value} , 담은 면도기의 총개수 : {pi.oiRLeftC}   \r\n";
 
                 isOrder = true;
             }
@@ -222,6 +231,38 @@ namespace SecondTombuyScreen //구매자 화면
             lblAirfreshenerLeftCount.Text = Convert.ToString(pi.iALeftC);
             lblBatteryLeftCount.Text = Convert.ToString(pi.iBLeftC);
             lblRazorLeftCount.Text = Convert.ToString(pi.iRLeftC);
+
+        }
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            txtOrderList.Clear();
+            int iTKSalePrice =  iKSalePrice * pi.oiKLeftC;        //마스크의 누적 구매금액
+            int iTWSalePrice =  iWSalePrice * pi.oiWLeftC;        //물티슈의 누적 구매금액
+            int iTESalePrice =  iESalePrice * pi.oiELeftC;        //이어폰의 누적 구매금액
+            int iTASalePrice =  iASalePrice * pi.oiALeftC;        //방향제의 누적 구매금액
+            int iTBSalePrice =  iBSalePrice * pi.oiBLeftC;        //건전지의 누적 구매금액
+            int iTRSalePrice =  iRSalePrice * pi.oiRLeftC;        //면도기의 누적 구매금액
+
+
+            int iOrderPrice = iTKSalePrice + iTWSalePrice + iTESalePrice + iTASalePrice + iTBSalePrice + iTRSalePrice;
+            MessageBox.Show($"총 결제 금액은 {iOrderPrice} 원 입니다.");
+
+            numCount1.Value = 0;
+            numCount2.Value = 0;
+            numCount3.Value = 0;
+            numCount4.Value = 0;
+            numCount5.Value = 0;
+            numCount6.Value = 0;
+
+
+
+
+
+        }
+
+        private void btnBuyerinformation_Click(object sender, EventArgs e)
+        {
 
         }
     }
