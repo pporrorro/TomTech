@@ -189,7 +189,7 @@ namespace TomBuyTest
             if (iRSalePrice > 0)
             {
                 sOrderList += $"면도기의 출고개수 : {numCount6.Value} , 판매 금액 : {iRSalePrice} :  \r\n";
-                sOrderList += $"면도기의 누적 출고개수 : {pi.oiRLeftC}, 면도기의 누적 판매금액 :{iKSalePrice * pi.oiRLeftC}  \r\n";
+                sOrderList += $"면도기의 누적 출고개수 : {pi.oiRLeftC}, 면도기의 누적 판매금액 :{iRSalePrice * pi.oiRLeftC}  \r\n";
 
                 isOrder = true;
             }
