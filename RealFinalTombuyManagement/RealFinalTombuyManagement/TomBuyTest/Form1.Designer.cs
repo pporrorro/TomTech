@@ -230,7 +230,7 @@
             this.groupBox7.Controls.Add(this.textBox1);
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Location = new System.Drawing.Point(593, 31);
+            this.groupBox7.Location = new System.Drawing.Point(593, 30);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(499, 184);
             this.groupBox7.TabIndex = 83;

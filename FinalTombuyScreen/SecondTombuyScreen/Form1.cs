@@ -248,6 +248,25 @@ namespace SecondTombuyScreen //구매자 화면
             int iOrderPrice = iTKSalePrice + iTWSalePrice + iTESalePrice + iTASalePrice + iTBSalePrice + iTRSalePrice;
             MessageBox.Show($"총 결제 금액은 {iOrderPrice} 원 입니다.");
 
+
+            //다시 담아야하는 바구니 정보
+
+            // 바구니-> 장바구니에 담은정보에 올린 마스크 개수 초기화 (주문현황)
+
+            //pi.oiKLeftC -= (int)numCount1.Value;
+            //
+            //pi.oiWLeftC -= (int)numCount2.Value;
+            //
+            //pi.oiELeftC -= (int)numCount3.Value;
+            //
+            //pi.oiALeftC -= (int)numCount4.Value;
+            //
+            //pi.oiBLeftC -= (int)numCount5.Value;
+            //
+            //pi.oiRLeftC -= (int)numCount6.Value;
+
+
+
             numCount1.Value = 0;
             numCount2.Value = 0;
             numCount3.Value = 0;
