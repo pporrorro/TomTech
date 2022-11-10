@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DbManager.cs" />
+    <Compile Include="INOUTRec.cs" />
     <Compile Include="ItemMaster.cs" />
     <Compile Include="ItemProp.cs">
       <SubType>UserControl</SubType>
@@ -131,6 +132,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SortRec.cs" />
+    <Compile Include="Stock_Table.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

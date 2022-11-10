@@ -35,21 +35,21 @@
             this.btnShowOrderbasket = new System.Windows.Forms.Button();
             this.tableLayoutPanel_pList = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtOrderList = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btnPutInformation = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOrderList = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.groupBox7.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -138,34 +138,6 @@
             this.tableLayoutPanel3.Size = new System.Drawing.Size(685, 651);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.txtOrderList);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 212);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 436);
-            this.panel1.TabIndex = 85;
-            // 
-            // txtOrderList
-            // 
-            this.txtOrderList.Location = new System.Drawing.Point(23, 27);
-            this.txtOrderList.Multiline = true;
-            this.txtOrderList.Name = "txtOrderList";
-            this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOrderList.Size = new System.Drawing.Size(574, 392);
-            this.txtOrderList.TabIndex = 85;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 12);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "장바구니 정보";
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.btnPutInformation);
@@ -221,6 +193,34 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "구매자";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.txtOrderList);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 212);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(679, 436);
+            this.panel1.TabIndex = 85;
+            // 
+            // txtOrderList
+            // 
+            this.txtOrderList.Location = new System.Drawing.Point(23, 27);
+            this.txtOrderList.Multiline = true;
+            this.txtOrderList.Name = "txtOrderList";
+            this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtOrderList.Size = new System.Drawing.Size(574, 392);
+            this.txtOrderList.TabIndex = 85;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 12);
+            this.label3.TabIndex = 86;
+            this.label3.Text = "장바구니 정보";
+            // 
             // ProductManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -234,10 +234,10 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -110,6 +110,6 @@
         private System.Windows.Forms.Label lblKf94LeftCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label vlblKf94LeftCount;
-        private System.Windows.Forms.NumericUpDown numCount1;
+        public System.Windows.Forms.NumericUpDown numCount1;
     }
 }
