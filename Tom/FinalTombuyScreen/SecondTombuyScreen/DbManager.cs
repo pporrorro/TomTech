@@ -162,16 +162,16 @@ namespace SecondTombuyScreen
                 while (rdr.Read())
                 {
 
-                    SortRec im = new SortRec();
-                    im.Order_Number = (string)rdr["Order_Number"];
-                    im.Product_Code = (string)rdr["Product_Code"];
-                    im.Sort_Qty     = (int)rdr["Sort_Qty"];
-                    im.User_Number  = (string)rdr["User_Number"];
-                    im.Region_Name  = (string)rdr["Region_Name"];
-                    im.Address      = (string)rdr["Address"];
-                    im.Sort_Time = (string)rdr["Sort_Time"];
+                    SortRec Sr = new SortRec();
+                    Sr.Order_Number = (string)rdr["Order_Number"];
+                    Sr.Product_Code = (string)rdr["Product_Code"];
+                    Sr.Sort_Qty     = (int)rdr["Sort_Qty"];
+                    Sr.User_Number  = (string)rdr["User_Number"];
+                    Sr.Region_Name  = (string)rdr["Region_Name"];
+                    Sr.Address      = (string)rdr["Address"];
+                    Sr.Sort_Time = (string)rdr["Sort_Time"];
 
-                    SortRecList.Add(im);
+                    SortRecList.Add(Sr);
                 }
                 rdr.Close();
             }
@@ -202,17 +202,17 @@ namespace SecondTombuyScreen
                 while (rdr.Read())
                 {
 
-                    Stock_Table im = new Stock_Table();
+                    Stock_Table St = new Stock_Table();
 
-                     im.Product_Code = (string)rdr["Product_Code"];
-                     im.Product_Name = (string)rdr["Product_Name"];
-                     im.Stock_Qty    = Convert.ToInt32(rdr["Stock_Qty"]);
-                     im.Place        = (string)rdr["Place"];
-                     im.Remark       = (string)rdr["Remark"];
-                     im.Indate       = (string)rdr["Indate"];
+                    St.Product_Code = (string)rdr["Product_Code"];
+                    St.Product_Name = (string)rdr["Product_Name"];
+                    St.Stock_Qty    = Convert.ToInt32(rdr["Stock_Qty"]);
+                    St.Place        = (string)rdr["Place"];
+                    St.Remark       = (string)rdr["Remark"];
+                    St.Indate       = (string)rdr["Indate"];
                      
 
-                    Stock_TableList.Add(im);
+                    Stock_TableList.Add(St);
                 }
                 rdr.Close();
             }

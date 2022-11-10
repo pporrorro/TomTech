@@ -18,6 +18,13 @@ namespace SecondTombuyScreen
         private List<ItemMaster> imList;
         private List<OrderList> oList;
         private List<ItemProp> iPList;
+
+
+        private List<INOUTRec> irList;
+        private List<SortRec> SrList;
+        private List<Stock_Table> StList;
+
+
         public ProductManage()
         {
             InitializeComponent();

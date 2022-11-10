@@ -10,7 +10,7 @@ namespace SecondTombuyScreen
     {
         public string Product_Code   = "";
         public string Product_Name   = "";
-        public int    Stock_Qty         = 0;
+        public int    Stock_Qty      = 0;
         public string Place          = "";
         public string Remark         = "";
         public string Indate         = "";
