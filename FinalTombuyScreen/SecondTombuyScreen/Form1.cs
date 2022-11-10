@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,12 +37,12 @@ namespace SecondTombuyScreen //구매자 화면
         private int iOrderPrice = 0;   // 총 결제금액
 
         //각 품목 누적 구매 금액
-        private int iTKSalePrice = 0; //마스크의 누적 구매금액 :{iKSalePrice(마스크 금액) * pi.oiKLeftC(마스크 주문수량)}
-        private int iTWSalePrice = 0; //물티슈의 누적 구매금액 :{iWSalePrice * pi.oiWLeftC}
-        private int iTESalePrice = 0; //이어폰의 누적 구매금액 :{iESalePrice * pi.oiELeftC}
-        private int iTASalePrice = 0; //방향제의 누적 구매금액 :{iASalePrice * pi.oiALeftC}
-        private int iTBSalePrice = 0; //건전지의 누적 구매금액 :{iBSalePrice * pi.oiBLeftC}
-        private int iTRSalePrice = 0; //면도기의 누적 구매금액 :{iRSalePrice * pi.oiRLeftC}
+        private int iTKSalePrice = 0; // 마스크의 누적 구매금액 :{iKSalePrice(마스크 금액) * pi.oiKLeftC(마스크 주문수량)}
+        private int iTWSalePrice = 0; // 물티슈의 누적 구매금액 :{iWSalePrice * pi.oiWLeftC}
+        private int iTESalePrice = 0; // 이어폰의 누적 구매금액 :{iESalePrice * pi.oiELeftC}
+        private int iTASalePrice = 0; // 방향제의 누적 구매금액 :{iASalePrice * pi.oiALeftC}
+        private int iTBSalePrice = 0; // 건전지의 누적 구매금액 :{iBSalePrice * pi.oiBLeftC}
+        private int iTRSalePrice = 0; // 면도기의 누적 구매금액 :{iRSalePrice * pi.oiRLeftC}
 
         
         //장바구니에 담은 내역
@@ -74,7 +75,7 @@ namespace SecondTombuyScreen //구매자 화면
         {
             //장바구니에 담은 가능량 체크하기
             int cVal1 = (int)numCount1.Value;
-            if (cVal1 > pi.iKLeftC - pi.oiKLeftC)//pi.iKLeftC - pi.oiKLeftC = lblKf94LeftCount.Text
+            if (cVal1 > pi.iKLeftC - pi.oiKLeftC) //pi.iKLeftC - pi.oiKLeftC = lblKf94LeftCount.Text
             {
                 MessageBox.Show("마스크 재고물품이 부족합니다.");
                 numCount1.Value = 0;
@@ -149,7 +150,6 @@ namespace SecondTombuyScreen //구매자 화면
             iRSalePrice = (int)numCount6.Value * pi.viRLeftC;
 
             // 거래 내역 있는 내역만 TextBox 에 표현.
-
             lblKf94LeftCount.Text = (pi.iKLeftC - pi.oiKLeftC).ToString();
             lblWetwipesLeftCount.Text = (pi.iWLeftC - pi.oiWLeftC).ToString();
             lblEarphoneLeftCount.Text = (pi.iELeftC - pi.oiELeftC).ToString();
@@ -157,58 +157,59 @@ namespace SecondTombuyScreen //구매자 화면
             lblBatteryLeftCount.Text = (pi.iBLeftC - pi.oiBLeftC).ToString();
             lblRazorLeftCount.Text = (pi.iRLeftC - pi.oiRLeftC).ToString();
 
-
+            int iTotalSalePrice = 0;
             bool isOrder = false;
 
-            sOrderList = "------------------------------------------------------------------------ \r\n";
-
+            sOrderList = "----------------------------- 장바구니 내역 ----------------------------- \r\n";
+            
 
             if (iKSalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 마스크 개수 : {numCount1.Value} , 담은 마스크의 총개수 : {pi.oiKLeftC}   \r\n";
-
+                sOrderList += $" 마스크 수량 : {pi.oiKLeftC}, 합계금액 : {iKSalePrice} 원   \r\n";
+                iTotalSalePrice += iKSalePrice;
                 isOrder = true;
             }
             if (iWSalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 물티슈 개수 : {numCount2.Value} , 담은 물티슈의 총개수 : {pi.oiWLeftC}   \r\n";
-
+                sOrderList += $" 물티슈 수량 : {pi.oiWLeftC}, 합계금액 : {iWSalePrice} 원   \r\n";
+                iTotalSalePrice += iWSalePrice;
                 isOrder = true;
             }
             if (iESalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 이어폰 개수 : {numCount3.Value} , 담은 이어폰의 총개수 : {pi.oiELeftC}   \r\n";
-
+                sOrderList += $" 이어폰 수량 : {pi.oiELeftC}, 합계금액 : {iESalePrice} 원   \r\n";
+                iTotalSalePrice += iESalePrice;
                 isOrder = true;
             }
             if (iASalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 방향제 개수 : {numCount4.Value} , 담은 방향제의 총개수 : {pi.oiALeftC}   \r\n";
-
+                sOrderList += $" 방향제 수량 : {pi.oiELeftC}, 합계금액 : {iASalePrice} 원   \r\n";
+                iTotalSalePrice += iASalePrice;
                 isOrder = true;
             }
             if (iBSalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 건전지 개수 : {numCount5.Value} , 담은 건전지의 총개수 : {pi.oiBLeftC}   \r\n";
-
+                sOrderList += $" 방향제 수량 : {pi.oiELeftC}, 합계금액 : {iBSalePrice} 원   \r\n";
+                iTotalSalePrice += iBSalePrice;
                 isOrder = true;
             }
             if (iRSalePrice > 0)
             {
-                sOrderList += $" 장바구니에 담은 면도기 개수 : {numCount6.Value} , 담은 면도기의 총개수 : {pi.oiRLeftC}   \r\n";
-
+                sOrderList += $" 면도기 수량 : {pi.oiELeftC}, 합계금액 : {iRSalePrice} 원   \r\n";
+                iTotalSalePrice += iRSalePrice;
                 isOrder = true;
             }
 
             if (isOrder == true)
+            { 
+                sOrderList += $" 장바구니 총 금액 : {iTotalSalePrice} 원";
                 txtOrderList.Text += sOrderList;
-
-
-
-
+            }
 
             else
-                txtOrderList.Text = "장바구니에 담은 내역이 없습니다.\r\n";
+                txtOrderList.Text = "장바구니에 담을 내역이 없습니다.\r\n";
+
+            MessageBox.Show("선택한 상품이 장바구니에 담겼습니다.");
 
         }
 

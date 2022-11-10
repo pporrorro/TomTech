@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -50,8 +51,6 @@ namespace SecondTombuyScreen
 
                 tableLayoutPanel_pList.Controls.Add(ip, 0, row);
                 ip.Anchor = AnchorStyles.Top;
-
-
             }
             //tableLayoutPanel2.TabIndex++;
             tableLayoutPanel_pList.Visible = true;
@@ -59,7 +58,6 @@ namespace SecondTombuyScreen
 
         private void btnShowOrderbasket_Click(object sender, EventArgs e)
         {
-
         }
     }
 }
