@@ -109,6 +109,7 @@
             this.btnShowOrderbasket.TabIndex = 82;
             this.btnShowOrderbasket.Text = "장바구니 담기";
             this.btnShowOrderbasket.UseVisualStyleBackColor = true;
+            this.btnShowOrderbasket.Click += new System.EventHandler(this.btnShowOrderbasket_Click);
             // 
             // tableLayoutPanel_pList
             // 

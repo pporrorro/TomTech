@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SecondTombuyScreen
 {
-    internal class ItemMaster
+    public class ItemMaster
     {
         public string Product_Code = "";
         public string Product_Name = "";

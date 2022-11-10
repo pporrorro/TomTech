@@ -56,5 +56,10 @@ namespace SecondTombuyScreen
             //tableLayoutPanel2.TabIndex++;
             tableLayoutPanel_pList.Visible = true;
         }
+
+        private void btnShowOrderbasket_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
