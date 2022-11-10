@@ -45,6 +45,7 @@ namespace TomBuyTest
                 //사용자 지정 폼
                 int orderCnt = 0;
                 string pc = imList[row - 1].Product_Code;
+
                 foreach (OrderList foo in oList)
                 {
                     if (foo.Product_Code.Equals(pc))

@@ -30,6 +30,10 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnOrderbasketCancel = new System.Windows.Forms.Button();
+            this.btnShowOrderbasket = new System.Windows.Forms.Button();
+            this.tableLayoutPanel_pList = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -40,16 +44,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtOrderList = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnOrderbasketCancel = new System.Windows.Forms.Button();
-            this.btnShowOrderbasket = new System.Windows.Forms.Button();
-            this.tableLayoutPanel_pList = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,8 +79,48 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.55118F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.448819F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(586, 635);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(585, 635);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnOrderbasketCancel);
+            this.panel2.Controls.Add(this.btnShowOrderbasket);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(3, 577);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(579, 55);
+            this.panel2.TabIndex = 0;
+            // 
+            // btnOrderbasketCancel
+            // 
+            this.btnOrderbasketCancel.Location = new System.Drawing.Point(312, 5);
+            this.btnOrderbasketCancel.Name = "btnOrderbasketCancel";
+            this.btnOrderbasketCancel.Size = new System.Drawing.Size(194, 43);
+            this.btnOrderbasketCancel.TabIndex = 83;
+            this.btnOrderbasketCancel.Text = "출고 취소";
+            this.btnOrderbasketCancel.UseVisualStyleBackColor = true;
+            // 
+            // btnShowOrderbasket
+            // 
+            this.btnShowOrderbasket.Location = new System.Drawing.Point(74, 7);
+            this.btnShowOrderbasket.Name = "btnShowOrderbasket";
+            this.btnShowOrderbasket.Size = new System.Drawing.Size(221, 42);
+            this.btnShowOrderbasket.TabIndex = 82;
+            this.btnShowOrderbasket.Text = "출고 보내기";
+            this.btnShowOrderbasket.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel_pList
+            // 
+            this.tableLayoutPanel_pList.ColumnCount = 1;
+            this.tableLayoutPanel_pList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_pList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_pList.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel_pList.Name = "tableLayoutPanel_pList";
+            this.tableLayoutPanel_pList.RowCount = 1;
+            this.tableLayoutPanel_pList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_pList.Size = new System.Drawing.Size(579, 568);
+            this.tableLayoutPanel_pList.TabIndex = 1;
             // 
             // tableLayoutPanel3
             // 
@@ -89,12 +129,12 @@
             this.tableLayoutPanel3.Controls.Add(this.groupBox7, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(595, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(594, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.12598F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.87402F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(626, 635);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(627, 635);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // groupBox7
@@ -150,16 +190,16 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "수신지";
+            this.label7.Text = "수신자";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txtOrderList);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 207);
+            this.panel1.Location = new System.Drawing.Point(3, 206);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(620, 425);
+            this.panel1.Size = new System.Drawing.Size(621, 426);
             this.panel1.TabIndex = 85;
             // 
             // txtOrderList
@@ -180,46 +220,6 @@
             this.label3.TabIndex = 86;
             this.label3.Text = "출고 정보";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.btnOrderbasketCancel);
-            this.panel2.Controls.Add(this.btnShowOrderbasket);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 577);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(580, 55);
-            this.panel2.TabIndex = 0;
-            // 
-            // btnOrderbasketCancel
-            // 
-            this.btnOrderbasketCancel.Location = new System.Drawing.Point(312, 5);
-            this.btnOrderbasketCancel.Name = "btnOrderbasketCancel";
-            this.btnOrderbasketCancel.Size = new System.Drawing.Size(194, 43);
-            this.btnOrderbasketCancel.TabIndex = 83;
-            this.btnOrderbasketCancel.Text = "출고 취소";
-            this.btnOrderbasketCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnShowOrderbasket
-            // 
-            this.btnShowOrderbasket.Location = new System.Drawing.Point(74, 7);
-            this.btnShowOrderbasket.Name = "btnShowOrderbasket";
-            this.btnShowOrderbasket.Size = new System.Drawing.Size(221, 42);
-            this.btnShowOrderbasket.TabIndex = 82;
-            this.btnShowOrderbasket.Text = "출고 보내기";
-            this.btnShowOrderbasket.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel_pList
-            // 
-            this.tableLayoutPanel_pList.ColumnCount = 1;
-            this.tableLayoutPanel_pList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_pList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_pList.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel_pList.Name = "tableLayoutPanel_pList";
-            this.tableLayoutPanel_pList.RowCount = 1;
-            this.tableLayoutPanel_pList.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_pList.Size = new System.Drawing.Size(580, 568);
-            this.tableLayoutPanel_pList.TabIndex = 1;
-            // 
             // ProductManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -231,12 +231,12 @@
             this.Load += new System.EventHandler(this.ProductManage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

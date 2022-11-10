@@ -276,7 +276,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "수신지";
+            this.label7.Text = "수신자";
             // 
             // txtOrderList
             // 

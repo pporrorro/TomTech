@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+//NuGet 솔루션에서 Mysql.Data 다운
 
 namespace TomBuyTest
 {
