@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SecondTombuyScreen
-{
+{//
     public partial class ProductManage : Form
     {
         private DbManager dm;
