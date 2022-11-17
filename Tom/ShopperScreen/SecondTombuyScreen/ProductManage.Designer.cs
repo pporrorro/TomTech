@@ -183,7 +183,7 @@
             // 
             // btnPutInformation
             // 
-            this.btnPutInformation.Location = new System.Drawing.Point(77, 119);
+            this.btnPutInformation.Location = new System.Drawing.Point(223, 130);
             this.btnPutInformation.Name = "btnPutInformation";
             this.btnPutInformation.Size = new System.Drawing.Size(152, 48);
             this.btnPutInformation.TabIndex = 4;
@@ -220,7 +220,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 0;
-            this.label7.Text = "구매자";
+            this.label7.Text = "수신인";
             // 
             // ProductManage
             // 
