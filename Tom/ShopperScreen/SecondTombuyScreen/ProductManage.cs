@@ -18,8 +18,6 @@ namespace SecondTombuyScreen
         private List<ItemMaster> imList;
         private List<OrderList> oList;
         private List<ItemProp> iPList;
-
-
         private List<INOUTRec> irList;
         private List<SortRec> SrList;
         private List<Stock_Table> StList;
@@ -32,6 +30,11 @@ namespace SecondTombuyScreen
             imList = new List<ItemMaster>();
             oList = new List<OrderList>();
             iPList = new List<ItemProp>();
+            irList = new List<INOUTRec>();
+            SrList = new List<SortRec>();
+            StList = new List<Stock_Table>();
+
+
         }
 
         private void ProductManage_Load(object sender, EventArgs e)
@@ -70,6 +73,8 @@ namespace SecondTombuyScreen
         string orderStr = "";
         private void btnShowOrderbasket_Click(object sender, EventArgs e)
         {
+            imList = dm.SelectItemMaster(null);
+            oList = dm.SelectOrderList(null);
             /*
             ------------------------------------------------------------------------
                  장바구니에 담은 마스크 개수: 5 , 담은 마스크의 총개수: 5
@@ -126,6 +131,14 @@ namespace SecondTombuyScreen
             txtOrderList.AppendText(sep + "\r\n" + contents  + sep + "\r\n");
             
 
+        }
+
+        private void btnOrderbasketCancel_Click(object sender, EventArgs e)
+        {
+            foreach (ItemProp ip in iPList)
+            {
+                ip.numCount1.Value = 0;
+            }
         }
     }
 }
