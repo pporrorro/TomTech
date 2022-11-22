@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SecondTombuyScreen.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,32 @@ namespace SecondTombuyScreen
         }
 
 
-        public ItemProp(ItemMaster _im, int orderCount)
+        public ItemProp(ItemMaster _im, int orderCount, int count)
         {
             InitializeComponent();
             im = _im;
+
+            switch (count) {
+                case 1:
+                    pictureBox1.Image = Resources._01;
+                    break;
+                case 2:
+                    pictureBox1.Image = Resources._02;
+                    break;
+                case 3:
+                    pictureBox1.Image = Resources._03;
+                    break;
+                case 4:
+                    pictureBox1.Image = Resources._04;
+                    break;
+                case 5:
+                    pictureBox1.Image = Resources._05;
+                    break;
+                case 6:
+                    pictureBox1.Image = Resources._06;
+                    break;
+            }
+
 
             groupBox1.Text = im.Product_Name;
             vlblKf94LeftCount.Text = im.Product_Price.ToString() + " 원";

@@ -82,12 +82,12 @@ namespace SecondTombuyScreen
 
                     OrderList ol = new OrderList();
                     ol.Product_Code = (string)rdr["Product_Code"];
-                    ol.Order_Qty    = (int)rdr["Order_Qty"];
-                    ol.User_Number  = (string)rdr["User_Number"];
-                    ol.User_Name    = (string)rdr["User_Name"];
-                    ol.Region_Name  = (string)rdr["Region_Name"];
-                    ol.Address      = (string)rdr["Address"];
-                    ol.Order_Time   = (string)rdr["Order_Time"];
+                    ol.Order_Qty = (int)rdr["Order_Qty"];
+                    ol.User_Number = (string)rdr["User_Number"];
+                    ol.User_Name = (string)rdr["User_Name"];
+                    ol.Region_Name = (string)rdr["Region_Name"];
+                    ol.Address = (string)rdr["Address"];
+                    ol.Order_Time = (string)rdr["Order_Time"];
                     ol.Order_Number = rdr["Order_Number"].ToString();
                     oList.Add(ol);
                 }
@@ -122,14 +122,14 @@ namespace SecondTombuyScreen
                     INOUTRec ir = new INOUTRec();
 
 
-                    ir.Order_Number     = (string)rdr["Order_Number"];
-                    ir.Product_Code     = (string)rdr["Product_Code"];
-                    ir.Product_Name     = (string)rdr["Product_Name"];
+                    ir.Order_Number = (string)rdr["Order_Number"];
+                    ir.Product_Code = (string)rdr["Product_Code"];
+                    ir.Product_Name = (string)rdr["Product_Name"];
                     ir.InProduct_Number = (string)rdr["InProduct_Number"];
-                    ir.OutProduct_Number= (string)rdr["OutProduct_Number"];
-                    ir.Place            = (string)rdr["Place"];
-                    ir.In_Time          = (string)rdr["In_Time"];
-                    ir.Out_Time         = (string)rdr["Out_Time"];
+                    ir.OutProduct_Number = (string)rdr["OutProduct_Number"];
+                    ir.Place = (string)rdr["Place"];
+                    ir.In_Time = (string)rdr["In_Time"];
+                    ir.Out_Time = (string)rdr["Out_Time"];
 
                     InoutRecList.Add(ir);
                 }
@@ -165,10 +165,10 @@ namespace SecondTombuyScreen
                     SortRec Sr = new SortRec();
                     Sr.Order_Number = (string)rdr["Order_Number"];
                     Sr.Product_Code = (string)rdr["Product_Code"];
-                    Sr.Sort_Qty     = (int)rdr["Sort_Qty"];
-                    Sr.User_Number  = (string)rdr["User_Number"];
-                    Sr.Region_Name  = (string)rdr["Region_Name"];
-                    Sr.Address      = (string)rdr["Address"];
+                    Sr.Sort_Qty = (int)rdr["Sort_Qty"];
+                    Sr.User_Number = (string)rdr["User_Number"];
+                    Sr.Region_Name = (string)rdr["Region_Name"];
+                    Sr.Address = (string)rdr["Address"];
                     Sr.Sort_Time = (string)rdr["Sort_Time"];
 
                     SortRecList.Add(Sr);
@@ -201,16 +201,14 @@ namespace SecondTombuyScreen
 
                 while (rdr.Read())
                 {
-
                     Stock_Table St = new Stock_Table();
 
                     St.Product_Code = (string)rdr["Product_Code"];
                     St.Product_Name = (string)rdr["Product_Name"];
-                    St.Stock_Qty    = Convert.ToInt32(rdr["Stock_Qty"]);
-                    St.Place        = (string)rdr["Place"];
-                    St.Remark       = (string)rdr["Remark"];
-                    St.Indate       = (string)rdr["Indate"];
-                     
+                    St.Stock_Qty = Convert.ToInt32(rdr["Stock_Qty"]);
+                    St.Place = (string)rdr["Place"];
+                    St.Remark = (string)rdr["Remark"];
+                    St.Indate = (string)rdr["Indate"];
 
                     Stock_TableList.Add(St);
                 }
@@ -219,6 +217,41 @@ namespace SecondTombuyScreen
             return Stock_TableList;
         }
 
+        public List<User_Table> SelectUser_Table(string whereStr)
+        {
+            List<User_Table> uList = new List<User_Table>();
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM User_Table";
+                string sql_where = "";
+                if (string.IsNullOrEmpty(whereStr))
+                    sql_where = "";
+                else
+                    sql_where = " WHERE " + whereStr;
+
+                sql += sql_where;
+
+                //ExecuteReader를 이용하여
+                //연결 모드로 데이타 가져오기
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+
+                    User_Table ul = new User_Table();
+                    ul.User_Number = (string)rdr["User_Number"];
+                    ul.User_Name = (string)rdr["User_Name"];
+                    ul.Phone = (string)rdr["Product_Code"];
+                    ul.Birth = (string)rdr["Order_Qty"];
+
+                    uList.Add(ul);
+                }
+                rdr.Close();
+            }
+            return uList;
+        }
         public bool InsertMysql(string query)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -250,10 +283,6 @@ namespace SecondTombuyScreen
                 }
             }
         }
-
-
-
-
 
 
         public void SelectQuery(string query, out MySqlDataReader rdr)

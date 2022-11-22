@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Utilities.Collections;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,10 @@ namespace SecondTombuyScreen
         private List<INOUTRec> irList;
         private List<SortRec> SrList;
         private List<Stock_Table> StList;
+        private List<User_Table> uList;
+        
+
+        int count = 0;
 
 
         public ProductManage()
@@ -33,6 +38,7 @@ namespace SecondTombuyScreen
             irList = new List<INOUTRec>();
             SrList = new List<SortRec>();
             StList = new List<Stock_Table>();
+            uList = new List<User_Table>();
 
 
         }
@@ -58,79 +64,15 @@ namespace SecondTombuyScreen
                     if (foo.Product_Code.Equals(pc))
                         orderCnt += foo.Order_Qty;
                 }
-                ItemProp ip = new ItemProp(imList[row - 1], orderCnt);
+                count++;
+                ItemProp ip = new ItemProp(imList[row - 1], orderCnt, count);
                 iPList.Add(ip);
 
                 tableLayoutPanel_pList.Controls.Add(ip, 0, row);
                 ip.Anchor = AnchorStyles.Top;
-
-
             }
             //tableLayoutPanel2.TabIndex++;
             tableLayoutPanel_pList.Visible = true;
-        }
-
-        string orderStr = "";
-        private void btnShowOrderbasket_Click(object sender, EventArgs e)
-        {
-            imList = dm.SelectItemMaster(null);
-            oList = dm.SelectOrderList(null);
-            /*
-            ------------------------------------------------------------------------
-                 장바구니에 담은 마스크 개수: 5 , 담은 마스크의 총개수: 5
-                 장바구니에 담은 물티슈 개수 : 2 , 담은 물티슈의 총개수: 2
-                ------------------------------------------------------------------------
-                 장바구니에 담은 마스크 개수 : 1 , 담은 마스크의 총개수: 6
-                 장바구니에 담은 물티슈 개수 : 5 , 담은 물티슈의 총개수: 7
-                 장바구니에 담은 이어폰 개수 : 3 , 담은 이어폰의 총개수: 3
-            */
-
-            string sep = "------------------------------------------------------------------------";
-            string contents = "";
-
-            //주문번호 생성 알고리즘으로 아래를 대체해야 함
-            OrderList ol = oList[oList.Count - 1];
-            //0. 주문 갯수를 구해온다 --> iPList
-            int idx = int.Parse( ol.Order_Number) + 1;
-            // --------------------------------------
-
-            foreach(ItemProp ip in iPList)
-            {
-                string productCode = ip.im.Product_Code;
-                string productName = ip.im.Product_Name;
-                int Qty = (int)ip.numCount1.Value;
-                if(Qty > 0)
-                {
-                    string io = "INSERT INTO `black_sheep`.`OrderList` (`Order_number`, `Product_Code`, `Order_Qty`, `User_Number`, `User_Name`, `Region_Name`, `Address`, `Order_time`) VALUES ('" + (idx++).ToString() +"', '"
-                                                                    + productCode
-                                                                    + "', '" + Qty.ToString()
-                                                                    + "', '4444', 'adf', 'adf', 'dfsa', '" +
-                                                                    DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss") + "');";
-                    bool foo = dm.InsertMysql(io);
-                    int orderCnt = 0;
-                    if (foo == true)
-                    {
-                        //주문한 총개수
-                        foreach (OrderList o in oList)
-                        {
-                            if (o.Product_Code.Equals(productCode))
-                                orderCnt += o.Order_Qty;
-                        }
-
-                        contents += "장바구니에 담은 " + productName + " 개수 :" + Qty.ToString() + ", 담은 " 
-                                     + productName + "의 총 개수 : " + orderCnt.ToString() + "\r\n";
-                       
-                    }
-                    else
-                    {
-                        txtOrderList.AppendText("주문 입력 오류가 발생했습니다.\r\n");
-                    }
-                }
-                
-            }
-            txtOrderList.AppendText(sep + "\r\n" + contents  + sep + "\r\n");
-            
-
         }
 
         private void btnOrderbasketCancel_Click(object sender, EventArgs e)
@@ -140,5 +82,65 @@ namespace SecondTombuyScreen
                 ip.numCount1.Value = 0;
             }
         }
+
+            string orderStr = "";
+            private void btnPutOrderbasket_Click(object sender, EventArgs e)
+            {
+                imList = dm.SelectItemMaster(null);
+                oList = dm.SelectOrderList(null);
+                string sep = "------------------------------------------------------------------------";
+                string contents = "";
+
+                //주문번호 생성 알고리즘으로 아래를 대체해야 함
+                OrderList ol = oList[oList.Count - 1];
+                //0. 주문 갯수를 구해온다 --> iPList
+                int idx = int.Parse(ol.Order_Number) + 1;
+                int zc = 8 - Convert.ToString(idx).Length;
+                string sdx = new String('0', zc);
+                sdx += Convert.ToString(idx);
+            // --------------------------------------
+
+            string sUserName = textBox1.Text;
+            string sAddress = textBox2.Text;
+            string sUserNumber = textBox3.Text;
+            List<User_Table> ul = dm.SelectUser_Table(sUserNumber);
+
+
+            foreach (ItemProp ip in iPList)
+                {
+                    string productCode = ip.im.Product_Code;
+                    string productName = ip.im.Product_Name;
+
+                    int Qty = (int)ip.numCount1.Value;
+                    if (Qty > 0)
+                    {
+                        string io = "INSERT INTO `black_sheep`.`OrderList` (`Order_number`, `Product_Code`, `Order_Qty`, `User_Number`, `User_Name`, `Region_Name`, `Address`, `Order_time`) VALUES ('" + sdx + "', '"
+                                                                        + productCode
+                                                                        + "', '" + Qty.ToString()
+                                                                        + "," + sUserNumber + "," + sUserName + "," + ""+"," + sAddress+
+                                                                        DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss") + "');";
+                        bool foo = dm.InsertMysql(io);
+                        int orderCnt = 0;
+                        if (foo == true)
+                        {
+                            // 주문한 총개수
+                            foreach (OrderList o in oList)
+                            {
+                                if (o.Product_Code.Equals(productCode))
+                                    orderCnt += o.Order_Qty;
+                            }
+
+                            contents += "장바구니에 담은 " + productName + " 개수 :" + Qty.ToString() + ", 담은 "
+                                         + productName + "의 총 개수 : " + orderCnt.ToString() + "\r\n";
+
+                        }
+                        else
+                        {
+                            txtOrderList.AppendText("주문 입력 오류가 발생했습니다.\r\n");
+                        }
+                    }
+                }
+                txtOrderList.AppendText(sep +" 주문내역"+ "\r\n" + contents + sep + "\r\n");
+            }
     }
 }
