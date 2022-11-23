@@ -85,7 +85,7 @@ namespace SecondTombuyScreen //구매자 화면
             if (cVal2 > pi.iWLeftC - pi.oiWLeftC)//pi.iWLeftC - pi.oiWLeftC =lblWetwipesLeftCount.Text
             {
                 MessageBox.Show("물티슈 재고물품이 부족합니다.");
-                numCount2.Value = 0;
+                numCount1.Value = 0;
                 return;
             }
 
@@ -93,7 +93,7 @@ namespace SecondTombuyScreen //구매자 화면
             if (cVal3 > pi.iELeftC - pi.oiELeftC)
             {
                 MessageBox.Show("이어폰 재고물품이 부족합니다.");
-                numCount3.Value = 0;
+                numCount1.Value = 0;
                 return;
             }
 
@@ -101,7 +101,7 @@ namespace SecondTombuyScreen //구매자 화면
             if (cVal4 > pi.iALeftC - pi.oiALeftC)
             {
                 MessageBox.Show("방향제 재고물품이 부족합니다.");
-                numCount4.Value = 0;
+                numCount1.Value = 0;
                 return;
             }
 

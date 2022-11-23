@@ -33,10 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.vlblKf94LeftCount = new System.Windows.Forms.Label();
             this.numCount1 = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -46,11 +44,9 @@
             this.groupBox1.Controls.Add(this.vlblKf94LeftCount);
             this.groupBox1.Controls.Add(this.numCount1);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(147, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(342, 133);
+            this.groupBox1.Size = new System.Drawing.Size(318, 69);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product_Name";
@@ -58,66 +54,52 @@
             // lblKf94LeftCount
             // 
             this.lblKf94LeftCount.AutoSize = true;
-            this.lblKf94LeftCount.Location = new System.Drawing.Point(246, 76);
+            this.lblKf94LeftCount.Location = new System.Drawing.Point(208, 46);
             this.lblKf94LeftCount.Name = "lblKf94LeftCount";
-            this.lblKf94LeftCount.Size = new System.Drawing.Size(42, 20);
+            this.lblKf94LeftCount.Size = new System.Drawing.Size(31, 16);
             this.lblKf94LeftCount.TabIndex = 76;
             this.lblKf94LeftCount.Text = "500";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 47);
+            this.label2.Location = new System.Drawing.Point(188, 22);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(71, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "재고량 (개)";
+            this.label2.Text = "남은수량";
             // 
             // vlblKf94LeftCount
             // 
             this.vlblKf94LeftCount.AutoSize = true;
-            this.vlblKf94LeftCount.Location = new System.Drawing.Point(31, 59);
+            this.vlblKf94LeftCount.Location = new System.Drawing.Point(6, 29);
             this.vlblKf94LeftCount.Name = "vlblKf94LeftCount";
-            this.vlblKf94LeftCount.Size = new System.Drawing.Size(73, 20);
+            this.vlblKf94LeftCount.Size = new System.Drawing.Size(55, 16);
             this.vlblKf94LeftCount.TabIndex = 0;
             this.vlblKf94LeftCount.Text = "2000원";
             // 
             // numCount1
             // 
-            this.numCount1.Location = new System.Drawing.Point(122, 57);
-            this.numCount1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numCount1.Location = new System.Drawing.Point(75, 27);
             this.numCount1.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numCount1.Name = "numCount1";
-            this.numCount1.Size = new System.Drawing.Size(69, 30);
+            this.numCount1.Size = new System.Drawing.Size(60, 26);
             this.numCount1.TabIndex = 75;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 141);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 77;
-            this.pictureBox1.TabStop = false;
             // 
             // ItemProp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ItemProp";
-            this.Size = new System.Drawing.Size(496, 141);
+            this.Size = new System.Drawing.Size(324, 72);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,7 +110,6 @@
         private System.Windows.Forms.Label lblKf94LeftCount;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label vlblKf94LeftCount;
-        public System.Windows.Forms.NumericUpDown numCount1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NumericUpDown numCount1;
     }
 }
