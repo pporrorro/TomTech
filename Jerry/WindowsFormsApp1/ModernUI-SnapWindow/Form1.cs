@@ -12,21 +12,29 @@ using System.Drawing.Drawing2D;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using RJCodeAdvance.RJControls;
+using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 
 namespace ModernUI_SnapWindow
 {
     public partial class Form1 : Form
     {
+        private string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+
         // Fields
         private int borderSize = 2;
 
         // Constructor
         public Form1()
         {
+
+            MySqlConnection conn = new MySqlConnection(strConn);
             InitializeComponent();
             this.Padding = new Padding(borderSize); // Border Size
             this.BackColor = Color.FromArgb(98, 102, 244); // Border Color
-
+            DataGridView();
+            PieChart();
+            LiveChartSource();
 
         }
 
@@ -169,10 +177,10 @@ namespace ModernUI_SnapWindow
 
         private void CollapseMenu()
         {
-            if (this.panel1.Width > 200) 
+            if (this.panel1.Width > 200)
             {
                 panel1.Width = 100;
-                
+
                 pictureBox1.Visible = false;
                 btnMenu.Dock = DockStyle.Top;
                 foreach (Button menuButton in this.panel1.Controls.OfType<Button>())
@@ -186,7 +194,7 @@ namespace ModernUI_SnapWindow
             else
             {
                 panel1.Width = 230;
-                
+
                 pictureBox1.Visible = true;
                 btnMenu.Dock = DockStyle.None;
                 foreach (Button menuButton in this.panel1.Controls.OfType<Button>())
@@ -204,7 +212,7 @@ namespace ModernUI_SnapWindow
             dropdownMenu.VisibleChanged += new EventHandler((sender2, ev)
                 => DropdownMenu_VisibleChanged(sender2, ev, control));
             dropdownMenu.Show(control, control.Width, 0);
-        }   
+        }
 
         private void DropdownMenu_VisibleChanged(object sender, EventArgs e, Control ctrl)
         {
@@ -217,6 +225,91 @@ namespace ModernUI_SnapWindow
             }
         }
 
-       
+        private static void InsertUpdate()
+        {
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO Tab1 VALUES (2, 'Tom')", conn);
+                cmd.ExecuteNonQuery();
+
+                cmd.CommandText = "UPDATE Tab1 SET Name='Tim' WHERE Id=2";
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void DataGridView()
+        {
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+                try
+                {
+                    MySqlDataAdapter adapter = new MySqlDataAdapter();
+                    adapter.SelectCommand = cmd;
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    BindingSource bindingSource = new BindingSource();
+
+                    bindingSource.DataSource = dataTable;
+                    //dataGridView1.DataSource = bindingSource;
+                    adapter.Update(dataTable);
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                cmd.ExecuteNonQuery();
+
+
+            }
+        }
+
+        private void PieChart()
+        {
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+                MySqlDataReader reader;
+                try
+                {
+                    reader = cmd.ExecuteReader();
+
+                    while(reader.Read())
+                    {
+                        this.chart3.Series["Product_Price"].Points.AddXY(reader.GetString("Product_Name"), reader.GetInt32("Product_Price"));
+                    }
+                }
+
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void LiveChartSource()
+        {
+            LiveCharts.WinForms.GeoMap geoMap = new LiveCharts.WinForms.GeoMap();
+            Random random = new Random();
+            Dictionary<string, double> value = new Dictionary<string, double>();
+            value["2003"] = random.Next(0, 100);
+            value["2037"] = random.Next(0, 100);
+            value["1999"] = random.Next(0, 100);
+            geoMap.HeatMap = value;
+            geoMap.Source = $"{Application.StartupPath}\\South Korea.xml";
+            this.panel13.Controls.Add(geoMap);
+            geoMap.Dock = DockStyle.Fill;
+        }
     }
 }
