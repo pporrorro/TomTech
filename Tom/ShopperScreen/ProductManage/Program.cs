@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SecondTombuyScreen
+namespace ProductManage
 {
     internal static class Program
     {
@@ -16,8 +16,7 @@ namespace SecondTombuyScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductManage());
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
         }
     }
 }
