@@ -35,6 +35,7 @@ namespace ModernUI_SnapWindow
             DataGridView();
             PieChart();
             LiveChartSource();
+            GraphChart();
 
         }
 
@@ -50,14 +51,14 @@ namespace ModernUI_SnapWindow
 
         }
 
-        private void PanelTitleBar_MouseDown_1(object sender, MouseEventArgs e)
+        private void PanelTitleBar_MouseDown_1(object sender, MouseEventArgs e) // 마우스 화면 드래그 기능
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
+        }//
 
         //Overridden methods
-        protected override void WndProc(ref Message m)
+        protected override void WndProc(ref Message m) // 폼 상단바 제거 기능
         {
 
 
@@ -128,13 +129,13 @@ namespace ModernUI_SnapWindow
         }
 
         // Event Methods
-        private void Form1_Resize(object sender, EventArgs e)
+        private void Form1_Resize(object sender, EventArgs e) // 폼 화면 크기 조정 기능 1
         {
             AdjustForm();
         }
 
         // Private Methods
-        private void AdjustForm()
+        private void AdjustForm() // 폼 화면 크기 조정 기능 2
         {
             switch (this.WindowState)
             {
@@ -151,12 +152,12 @@ namespace ModernUI_SnapWindow
 
         }
 
-        private void btnMinimize_Click(object sender, EventArgs e)
+        private void btnMinimize_Click(object sender, EventArgs e) // 폼 화면 최소화 기능
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void btnMaximize_Click(object sender, EventArgs e)
+        private void btnMaximize_Click(object sender, EventArgs e) // 폼 화면 최대화 기능
         {
             if (this.WindowState == FormWindowState.Normal)
                 this.WindowState = FormWindowState.Maximized;
@@ -165,17 +166,17 @@ namespace ModernUI_SnapWindow
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e) // 폼 화면 닫기 기능
         {
             Application.Exit();
         }
 
-        private void btnMenu_Click(object sender, EventArgs e)
+        private void btnMenu_Click(object sender, EventArgs e) // X
         {
             CollapseMenu();
         }
 
-        private void CollapseMenu()
+        private void CollapseMenu() 
         {
             if (this.panel1.Width > 200)
             {
@@ -206,7 +207,7 @@ namespace ModernUI_SnapWindow
             }
         }
 
-        private void Open_DropdownMenu(RJDropdownMenu dropdownMenu, object sender)
+        private void Open_DropdownMenu(RJDropdownMenu dropdownMenu, object sender) // X
         {
             Control control = (Control)sender;
             dropdownMenu.VisibleChanged += new EventHandler((sender2, ev)
@@ -214,7 +215,7 @@ namespace ModernUI_SnapWindow
             dropdownMenu.Show(control, control.Width, 0);
         }
 
-        private void DropdownMenu_VisibleChanged(object sender, EventArgs e, Control ctrl)
+        private void DropdownMenu_VisibleChanged(object sender, EventArgs e, Control ctrl) // X
         {
             RJDropdownMenu dropdownMenu = (RJDropdownMenu)sender;
             if (!DesignMode)
@@ -225,7 +226,7 @@ namespace ModernUI_SnapWindow
             }
         }
 
-        private static void InsertUpdate()
+        private static void InsertUpdate() // 삽입 기능 X
         {
             string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
 
@@ -240,7 +241,7 @@ namespace ModernUI_SnapWindow
             }
         }
 
-        private void DataGridView()
+        private void DataGridView() // 데이터 그리드 뷰 기능
         {
             string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
 
@@ -271,7 +272,7 @@ namespace ModernUI_SnapWindow
             }
         }
 
-        private void PieChart()
+        private void PieChart() // 파이 차트 데이터 기능
         {
             string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
 
@@ -298,7 +299,34 @@ namespace ModernUI_SnapWindow
 
         }
 
-        private void LiveChartSource()
+        private void GraphChart() // 그래프차트 데이터 기능
+        {
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+
+            using (MySqlConnection conn = new MySqlConnection(strConn))
+            {
+                conn.Open();
+                MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+                MySqlDataReader reader;
+                try
+                {
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        this.chart1.Series["Product_Price"].Points.AddXY(reader.GetString("Product_Name"), reader.GetInt32("Product_Price"));
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+        }
+
+        private void LiveChartSource() // 지도 함수 데이터 기능
         {
             LiveCharts.WinForms.GeoMap geoMap = new LiveCharts.WinForms.GeoMap();
             Random random = new Random();
