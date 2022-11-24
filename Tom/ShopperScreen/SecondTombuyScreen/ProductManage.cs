@@ -47,15 +47,16 @@ namespace SecondTombuyScreen
 
         Dictionary<string, int> Basket = new Dictionary<string, int>();
         int count = 0;
+        int iTotalPrice = 0;
 
 
         public ProductManage()
         {
             InitializeComponent();
+
             dm = new DbManager(strConn);
             ip = new ItemProp();
             pi = new ProductInfo();
-
 
             imList = new List<ItemMaster>();
             oList = new List<OrderList>();
@@ -98,6 +99,13 @@ namespace SecondTombuyScreen
             }
             //tableLayoutPanel2.TabIndex++;
             tableLayoutPanel_pList.Visible = true;
+
+            // 콤보박스 세팅
+            DataTable dt = dm.SelectRegion_Number();
+            
+            comboBox1.DataSource = dt;
+            comboBox1.DisplayMember = "Region_Name";  // 콤보박스에 보여줄 컬럼명.
+            comboBox1.ValueMember = "idRegion_Number"; // 실제 사용할 Value값.
         }
         #endregion
 
@@ -107,6 +115,7 @@ namespace SecondTombuyScreen
             Basket.Clear();
             txtOrderList.Text = "";
             txtOrderList.Text = "  장바구니에 아무것도 없습니다. \r\n";
+            iTotalPrice = 0;
         }
         #endregion
 
@@ -119,7 +128,7 @@ namespace SecondTombuyScreen
         {
             txtOrderList.Text = " ";
 
-            int iTotalPrice = 0;
+            
             orderStr += "\r\n--------------- 장바구니 담긴 내역 ---------------\r\n\r\n";
 
             // ItemProp 확인해서 딕셔너리 Basket 에 주문수량 담기
@@ -174,6 +183,7 @@ namespace SecondTombuyScreen
             }
 
             txtOrderList.Text = orderStr; // 내역 출력
+            orderStr = string.Empty;
         }
         #endregion
 

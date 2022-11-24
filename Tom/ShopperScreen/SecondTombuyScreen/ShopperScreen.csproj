@@ -116,6 +116,7 @@
     <Compile Include="ItemProp.Designer.cs">
       <DependentUpon>ItemProp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Region_Number.cs" />
     <Compile Include="User_Table.cs" />
     <Compile Include="OrderList.cs" />
     <Compile Include="ProductInfo.cs" />

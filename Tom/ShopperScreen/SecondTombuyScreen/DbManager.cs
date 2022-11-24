@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -252,6 +253,36 @@ namespace SecondTombuyScreen
             }
             return uList;
         }
+
+        public DataTable SelectRegion_Number()
+        {
+            DataTable nList = new DataTable();
+            nList.Columns.Add("idRegion_Number", typeof(int));
+            nList.Columns.Add("Region_Name", typeof(string));
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT * FROM Region_Number";
+
+                //ExecuteReader를 이용하여
+                //연결 모드로 데이타 가져오기
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                while (rdr.Read())
+                {
+                    DataRow row = nList.NewRow();
+                    row["idRegion_Number"] = Convert.ToInt32(rdr["idRegion_Number"]);
+                    row["Region_Name"] = (string)rdr["Region_Name"];
+
+                    nList.Rows.Add(row);
+                }
+                rdr.Close();
+            }
+            return nList;
+        }
+
         public bool InsertMysql(string query)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))

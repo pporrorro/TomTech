@@ -46,6 +46,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -183,6 +184,7 @@
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.comboBox1);
             this.groupBox7.Controls.Add(this.textBox3);
             this.groupBox7.Controls.Add(this.label1);
             this.groupBox7.Controls.Add(this.btnInsertOrder);
@@ -229,10 +231,10 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(119, 102);
+            this.textBox2.Location = new System.Drawing.Point(282, 111);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(452, 25);
+            this.textBox2.Size = new System.Drawing.Size(349, 25);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
@@ -246,7 +248,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(55, 110);
+            this.label4.Location = new System.Drawing.Point(74, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 15);
             this.label4.TabIndex = 1;
@@ -260,6 +262,14 @@
             this.label7.Size = new System.Drawing.Size(67, 15);
             this.label7.TabIndex = 0;
             this.label7.Text = "회원이름";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(119, 112);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(142, 23);
+            this.comboBox1.TabIndex = 7;
             // 
             // ProductManage
             // 
@@ -307,5 +317,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
