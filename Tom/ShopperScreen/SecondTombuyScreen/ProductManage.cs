@@ -16,8 +16,20 @@ using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using Google.Protobuf.WellKnownTypes;
 
+#region < HEADER >
+// *---------------------------------------------------------------------------------------------*
+//   Form ID      : 전체상품 주문화면
+//   Form Name    : 작업지시 별 생산 실적 현황 및 달성율
+//   Name Space   : Shopper Screen 으로 바꿔줘야함...
+//   Created Date : 2022-11-24 오후 12시
+//   Made By      : STELLA
+//   Description  : 장바구니 내역에 총 합계, 단가 추가 중 (단가 가져오는 함수 ItemInfo에 추가 중)
+// *---------------------------------------------------------------------------------------------*
+#endregion
+
 namespace SecondTombuyScreen
 {
+
     public partial class ProductManage : Form
     {
         private DbManager dm;
