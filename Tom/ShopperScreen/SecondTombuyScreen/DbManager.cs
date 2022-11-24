@@ -243,8 +243,8 @@ namespace SecondTombuyScreen
                     User_Table ul = new User_Table();
                     ul.User_Number = (string)rdr["User_Number"];
                     ul.User_Name = (string)rdr["User_Name"];
-                    ul.Phone = (string)rdr["Product_Code"];
-                    ul.Birth = (string)rdr["Order_Qty"];
+                    ul.Phone = (string)rdr["Phone"];
+                    ul.Birth = (string)rdr["Birth"];
 
                     uList.Add(ul);
                 }

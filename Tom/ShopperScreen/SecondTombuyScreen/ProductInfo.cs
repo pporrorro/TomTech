@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace SecondTombuyScreen//디자인 테스트
 
 {
+
     internal class ProductInfo
     {
         //갯수//총 재고 개수
@@ -56,6 +57,15 @@ namespace SecondTombuyScreen//디자인 테스트
             oiBLeftC = 0;
             oiRLeftC = 0;
         }
+
+        public ItemMaster im;
+
+        //public int SelectPrice(string productname)
+        //{
+        //    foreach(in im.Product_Name)
+        //    return SelectPrice();
+        //}
+        // 수정중 단가 불러오는 함수만들 예정
 
 
     }

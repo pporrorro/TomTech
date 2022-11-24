@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblKf94LeftCount = new System.Windows.Forms.Label();
+            this.lblLeftCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.vlblKf94LeftCount = new System.Windows.Forms.Label();
+            this.lblProductPrice = new System.Windows.Forms.Label();
             this.numCount1 = new System.Windows.Forms.NumericUpDown();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -41,9 +41,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblKf94LeftCount);
+            this.groupBox1.Controls.Add(this.lblLeftCount);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.vlblKf94LeftCount);
+            this.groupBox1.Controls.Add(this.lblProductPrice);
             this.groupBox1.Controls.Add(this.numCount1);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F);
             this.groupBox1.Location = new System.Drawing.Point(147, 4);
@@ -55,14 +55,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product_Name";
             // 
-            // lblKf94LeftCount
+            // lblLeftCount
             // 
-            this.lblKf94LeftCount.AutoSize = true;
-            this.lblKf94LeftCount.Location = new System.Drawing.Point(246, 76);
-            this.lblKf94LeftCount.Name = "lblKf94LeftCount";
-            this.lblKf94LeftCount.Size = new System.Drawing.Size(42, 20);
-            this.lblKf94LeftCount.TabIndex = 76;
-            this.lblKf94LeftCount.Text = "500";
+            this.lblLeftCount.AutoSize = true;
+            this.lblLeftCount.Location = new System.Drawing.Point(246, 76);
+            this.lblLeftCount.Name = "lblLeftCount";
+            this.lblLeftCount.Size = new System.Drawing.Size(42, 20);
+            this.lblLeftCount.TabIndex = 76;
+            this.lblLeftCount.Text = "500";
             // 
             // label2
             // 
@@ -73,14 +73,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "재고량 (개)";
             // 
-            // vlblKf94LeftCount
+            // lblProductPrice
             // 
-            this.vlblKf94LeftCount.AutoSize = true;
-            this.vlblKf94LeftCount.Location = new System.Drawing.Point(31, 59);
-            this.vlblKf94LeftCount.Name = "vlblKf94LeftCount";
-            this.vlblKf94LeftCount.Size = new System.Drawing.Size(73, 20);
-            this.vlblKf94LeftCount.TabIndex = 0;
-            this.vlblKf94LeftCount.Text = "2000원";
+            this.lblProductPrice.AutoSize = true;
+            this.lblProductPrice.Location = new System.Drawing.Point(31, 59);
+            this.lblProductPrice.Name = "lblProductPrice";
+            this.lblProductPrice.Size = new System.Drawing.Size(73, 20);
+            this.lblProductPrice.TabIndex = 0;
+            this.lblProductPrice.Text = "2000원";
             // 
             // numCount1
             // 
@@ -123,12 +123,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblKf94LeftCount;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label vlblKf94LeftCount;
         public System.Windows.Forms.NumericUpDown numCount1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label lblLeftCount;
+        public System.Windows.Forms.Label lblProductPrice;
     }
 }

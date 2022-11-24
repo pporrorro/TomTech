@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,12 +18,22 @@ namespace SecondTombuyScreen
         public ItemProp()
         {
             InitializeComponent();
+            string sProductName = groupBox1.Text;
+            string sLeftCount = lblProductPrice.Text;
+            string sProductPrice = lblProductPrice.Text;
+            int iOrderCount = (int)numCount1.Value;
         }
+
 
 
         public ItemProp(ItemMaster _im, int orderCount, int count)
         {
             InitializeComponent();
+            string sProductName = groupBox1.Text;
+            string sProductPrice = lblProductPrice.Text;
+            string sLeftCount = lblLeftCount.Text;
+            int iOrderCount = (int)numCount1.Value;
+
             im = _im;
 
             switch (count) {
@@ -46,11 +57,14 @@ namespace SecondTombuyScreen
                     break;
             }
 
+            sProductName = im.Product_Name;
+            sProductPrice = im.Product_Price.ToString() + " 원";
+            sLeftCount = (im.Stock_Qty - orderCount).ToString();
 
-            groupBox1.Text = im.Product_Name;
-            vlblKf94LeftCount.Text = im.Product_Price.ToString() + " 원";
+            groupBox1.Text = sProductName;
+            lblProductPrice.Text = sProductPrice;
+            lblLeftCount.Text = sLeftCount;
 
-            lblKf94LeftCount.Text = (im.Stock_Qty - orderCount).ToString();
         }
     }
 }

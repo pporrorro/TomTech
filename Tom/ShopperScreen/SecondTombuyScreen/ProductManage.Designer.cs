@@ -39,13 +39,13 @@
             this.txtOrderList = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnInsertOrder = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -199,6 +199,23 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "구매자 정보";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(353, 44);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(142, 25);
+            this.textBox3.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(279, 48);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "회원번호";
+            // 
             // btnInsertOrder
             // 
             this.btnInsertOrder.Location = new System.Drawing.Point(255, 162);
@@ -208,6 +225,7 @@
             this.btnInsertOrder.TabIndex = 4;
             this.btnInsertOrder.Text = "주문하기";
             this.btnInsertOrder.UseVisualStyleBackColor = true;
+            this.btnInsertOrder.Click += new System.EventHandler(this.btnInsertOrder_Click);
             // 
             // textBox2
             // 
@@ -243,23 +261,6 @@
             this.label7.TabIndex = 0;
             this.label7.Text = "회원이름";
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(353, 44);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(142, 25);
-            this.textBox3.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 48);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "회원번호";
-            // 
             // ProductManage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -268,7 +269,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManage";
-            this.Text = "ProductManage";
+            this.Text = "전체상품";
             this.Load += new System.EventHandler(this.ProductManage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
