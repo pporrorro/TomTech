@@ -265,10 +265,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1528, 821);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Location = new System.Drawing.Point(100, 50);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ProductManage";
+            this.ShowInTaskbar = false;
             this.Text = "전체상품";
             this.Load += new System.EventHandler(this.ProductManage_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

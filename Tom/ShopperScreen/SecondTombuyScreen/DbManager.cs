@@ -284,7 +284,6 @@ namespace SecondTombuyScreen
             }
         }
 
-
         public void SelectQuery(string query, out MySqlDataReader rdr)
         {
             using (MySqlConnection conn = new MySqlConnection(connStr))
@@ -296,8 +295,5 @@ namespace SecondTombuyScreen
                 rdr = cmd.ExecuteReader();
             }
         }
-
-
-
     }
 }
