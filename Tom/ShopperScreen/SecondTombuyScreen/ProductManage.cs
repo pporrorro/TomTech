@@ -15,6 +15,11 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using Google.Protobuf.WellKnownTypes;
+using System.Globalization;
+using System.Linq.Expressions;
+using MySqlX.XDevAPI.Relational;
+using static System.Data.DataRow;
+using static System.Data.DataColumn;
 
 #region < HEADER >
 // *---------------------------------------------------------------------------------------------*
@@ -35,7 +40,7 @@ namespace SecondTombuyScreen
         private DbManager dm;
         private ItemProp ip;
         private ProductInfo pi;
-        private string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+        private string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
         private List<ItemMaster> imList;
         private List<OrderList> oList;
@@ -102,10 +107,12 @@ namespace SecondTombuyScreen
 
             // 콤보박스 세팅
             DataTable dt = dm.SelectRegion_Number();
-            
+
             comboBox1.DataSource = dt;
-            comboBox1.DisplayMember = "Region_Name";  // 콤보박스에 보여줄 컬럼명.
-            comboBox1.ValueMember = "idRegion_Number"; // 실제 사용할 Value값.
+            comboBox1.DisplayMember = "Region_Name";   // 콤보박스에 보여줄 컬럼명.
+            comboBox1.ValueMember = "Region_Name";     // 실제 사용할 Value값.
+            comboBox1.Text = "지역";
+
         }
         #endregion
 
@@ -126,9 +133,11 @@ namespace SecondTombuyScreen
         string orderStr = "";
         private void btnPutOrderbasket_Click(object sender, EventArgs e)
         {
+            try
+            { 
             txtOrderList.Text = " ";
 
-            
+
             orderStr += "\r\n--------------- 장바구니 담긴 내역 ---------------\r\n\r\n";
 
             // ItemProp 확인해서 딕셔너리 Basket 에 주문수량 담기
@@ -139,7 +148,7 @@ namespace SecondTombuyScreen
                 int iLeftCount = Convert.ToInt32(ip.lblLeftCount.Text); // 재고량
                 int iOrderCount = (int)ip.numCount1.Value;              // 주문량
 
-                sProductPrice = sProductPrice.Substring(0, sProductPrice.Length-1);
+                sProductPrice = sProductPrice.Substring(0, sProductPrice.Length - 1);
                 int iProductPrice = Convert.ToInt32(sProductPrice);     //
 
                 if (iLeftCount - iOrderCount < 0)
@@ -153,7 +162,7 @@ namespace SecondTombuyScreen
                 {
                     if (Basket.ContainsKey(sProductName)) Basket[sProductName] += iOrderCount;
                     else
-                    { 
+                    {
                         Basket.Add(sProductName, iOrderCount);
                     }
                     // orderStr += $"  {sProductName}    {iProductPrice}    {iOrderCount}  개\r\n";
@@ -175,7 +184,7 @@ namespace SecondTombuyScreen
                 foreach (string key in Basket.Keys)
                 {
                     int iPrice = pi.SelectPrice(key);
-                    orderStr += $"  {key}    {iPrice}    {Basket[key]}  개  \r\n";
+                    orderStr += $"  {key}    {iPrice}  원  {Basket[key]}  개  \r\n";
                 }
 
                 // 합계
@@ -184,79 +193,118 @@ namespace SecondTombuyScreen
 
             txtOrderList.Text = orderStr; // 내역 출력
             orderStr = string.Empty;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
         }
         #endregion
 
         #region << 주문하기 >>
         private void btnInsertOrder_Click(object sender, EventArgs e)
         {
-            if (Basket.Count == 0)
+            try
             {
-                MessageBox.Show("장바구니에 주문할 내역이 없습니다.");
-                return;
-            }
-            else if (MessageBox.Show("장바구니 내역을 주문하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
-            {
-                return;
-            }
+                string sUserName = textBox1.Text;
+                string sUserNumber = textBox3.Text;
+                string sRegionName = Convert.ToString(comboBox1.SelectedValue);
+                string sAddress = textBox2.Text;
+                string sproductCode = string.Empty;
+                string sproductName = string.Empty;
 
-            string sUserName = textBox1.Text;
-            string sAddress = textBox2.Text;
-            string sUserNumber = textBox3.Text;
-            List<User_Table> ul = new List<User_Table>();
-            ul = dm.SelectUser_Table(sUserNumber);
+                int orderCnt = 0;
+                int iTotalorderCnt = 0;
+                int iTotalPrice = 0;
 
-            if (sUserName != ul[0].User_Name)
-            {
-                MessageBox.Show("회원정보가 일치하지 않습니다.");
-                return;
-            }
+                imList = dm.SelectItemMaster(null);
+                oList = dm.SelectOrderList(null);
 
-            imList = dm.SelectItemMaster(null);
-            oList = dm.SelectOrderList(null);
-            string sep = "------------------------------------------------------------------------";
-            string contents = "";
+                DataTable uList = dm.SelectUser_Table(sUserName, "User_Name = ");
 
-            // 주문번호 생성 알고리즘
-            OrderList ol = oList[oList.Count - 1];
-            int idx = int.Parse(ol.Order_Number) + 1;
-            int zc = 8 - Convert.ToString(idx).Length;
-            string sdx = new String('0', zc);
-            sdx += Convert.ToString(idx++);
-            // --------------------------------------
-
-            foreach (ItemProp ip in iPList)
-            {
-                string productCode = ip.im.Product_Code;
-                string productName = ip.im.Product_Name;
-
-                int Qty = (int)ip.numCount1.Value;
-                if (Qty > 0)
+                // 회원정보 확인
+                if (sUserName == "" || sUserNumber == "")
                 {
-                    string io = "INSERT INTO `black_sheep`.`OrderList` (`Order_number`, `Product_Code`, `Order_Qty`, `User_Number`, `User_Name`, `Region_Name`, `Address`, `Order_time`) VALUES ('" + sdx + "', '"
-                                                                    + productCode
-                                                                    + ", " + Qty.ToString()
-                                                                    + "," + sUserNumber + "," + sUserName + "," + "" + "," + sAddress +
-                                                                    DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss") + "');";
-                    bool foo = dm.InsertMysql(io);
-                    int orderCnt = 0;
+                    MessageBox.Show("회원정보가 입력되지 않았습니다.\r\n회원만 구매할 수 있습니다.");
+                    return;
+                }
 
-                    if (foo == true)
+                string sep = "-------------------------------";
+                string contents = "";
+
+
+                // 장바구니 확인
+                if (Basket.Count == 0)
+                {
+                    MessageBox.Show("장바구니에 주문할 내역이 없습니다.");
+                    return;
+                }
+                else if (MessageBox.Show("장바구니 내역을 주문하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    return;
+                }
+
+                // 주소입력 확인
+                else if (sRegionName == "지역" || sAddress == "")
+                {
+                    MessageBox.Show("주소가 입력되지 않았습니다.");
+                    return;
+                }
+
+
+                // 주문번호 생성 알고리즘
+                OrderList ol = oList[oList.Count - 1];
+                int idx = int.Parse(ol.Order_Number) + 1;
+                int zc = 8 - Convert.ToString(idx).Length;
+                string sdx = new String('0', zc);
+                sdx += Convert.ToString(idx++);
+                // --------------------------------------
+
+
+
+                foreach (string key in Basket.Keys)
+                {
+                    orderCnt = Basket[key];
+                    sproductName = key;
+
+                    // 상품코드 불러오기
+                    foreach (ItemMaster item in dm.SelectItemMaster($"Product_Name = '{key}'"))
                     {
-                        // 주문한 총개수
-                        foreach (OrderList o in oList)
-                        {
-                            if (o.Product_Code.Equals(productCode)) orderCnt += o.Order_Qty;
-                        }
-                        contents += productName + orderCnt.ToString() + "개" + "\r\n";
+                        sproductCode = item.Product_Code;
                     }
-                    else
+                    
+                    if (orderCnt > 0)
                     {
-                        txtOrderList.AppendText("주문 입력 오류가 발생했습니다.\r\n");
+                        string io = "INSERT INTO `black_sheep`.`OrderList` (`Order_number`, `Product_Code`, `Order_Qty`, `User_Number`, `User_Name`, `Region_Name`, `Address`, `Order_time`) VALUES" + $"('{sdx}', '{sproductCode}', '{orderCnt}', '{sUserNumber}', '{sUserName}', '{sRegionName}', '{sAddress}', '{DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss")}');";
+                        bool foo = dm.InsertMysql(io);
+
+                        if (foo == true)
+                        {
+                            // 주문한 총 개수
+                            foreach (OrderList o in oList)
+                            {
+                                if (o.Product_Code == sproductCode)
+                                {
+                                    int iPrice = pi.SelectPrice(o.Product_Code);
+                                    contents += "\r\n  " + sproductName + "  " + iPrice + "원  " + orderCnt.ToString() + "개";
+                                    iTotalPrice += iPrice * orderCnt;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("주문 입력 오류가 발생했습니다.\r\n");
+                            return;
+                        }
                     }
                 }
+                MessageBox.Show("주문이 완료되었습니다.");
+                txtOrderList.Text = sep + "주문내역" + sep + contents + $"\r\n                                                                   총 주문 금액  {iTotalPrice}  원                                                                   \r\n";
             }
-            txtOrderList.AppendText(sep + " 주문내역" + "\r\n" + contents + sep + "\r\n");
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
         }
         #endregion
     }
