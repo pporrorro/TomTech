@@ -50,7 +50,7 @@ namespace ModernUI_SnapWindow
                     BindingSource bindingSource = new BindingSource();
 
                     bindingSource.DataSource = dataTable;
-                    dataGridView1.DataSource = bindingSource;
+                    dataGridView5.DataSource = bindingSource;
                     adapter.Update(dataTable);
                 }
 
