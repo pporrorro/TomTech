@@ -238,56 +238,16 @@ namespace SecondTombuyScreen
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
 
-                User_Table ul = new User_Table();
                 while (rdr.Read())
                 {
+
+                    User_Table ul = new User_Table();
                     ul.User_Number = (string)rdr["User_Number"];
                     ul.User_Name = (string)rdr["User_Name"];
                     ul.Phone = (string)rdr["Phone"];
                     ul.Birth = (string)rdr["Birth"];
 
                     uList.Add(ul);
-                }
-                rdr.Close();
-            }
-            return uList;
-        }
-
-        public DataTable SelectUser_Table(string whereStr, string condition)
-        {
-            DataTable uList = new DataTable();
-            uList.Columns.Add("User_Number", typeof(string));
-            uList.Columns.Add("User_Name", typeof(string));
-            uList.Columns.Add("Phone", typeof(string));
-            uList.Columns.Add("Birth", typeof(string));
-
-
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                conn.Open();
-                string sql = "SELECT * FROM User_Table";
-                string sql_where = "";
-                if (string.IsNullOrEmpty(whereStr))
-                    sql_where = "";
-                else
-                    sql_where = " WHERE " + condition + $"\"{whereStr}\"";
-
-                sql += sql_where;
-
-                //ExecuteReader를 이용하여
-                //연결 모드로 데이타 가져오기
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    DataRow row = uList.NewRow();
-                    row["User_Number"] = (string)rdr["User_Number"];
-                    row["User_Name"] = (string)rdr["User_Name"];
-                    row["Phone"] = (string)rdr["Phone"];
-                    row["Birth"] = (string)rdr["Birth"];
-
-                    uList.Rows.Add(row);
                 }
                 rdr.Close();
             }
@@ -360,7 +320,6 @@ namespace SecondTombuyScreen
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(query, conn);
