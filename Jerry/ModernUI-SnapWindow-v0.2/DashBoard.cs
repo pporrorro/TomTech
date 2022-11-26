@@ -68,18 +68,36 @@ namespace ModernUI_SnapWindow
         {
             string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
 
+
+
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+
+                string query = "SELECT a.*, " +
+                               "CASE " +
+                               "WHEN age < 20 THEN '10' " +
+                               "WHEN age< 30 THEN '20' " +
+                               "WHEN age< 40 THEN '30' " +
+                               "WHEN age< 50 THEN '40' " +
+                               "WHEN age< 60 THEN '50' " +
+                               "WHEN age< 70 THEN '60' " +
+                               "END AS age_group, " +
+                               "count(*) as count " +
+                               "FROM(SELECT *, FLOOR(date_format(now(), '%Y') - substring(birth, 1, 4)) age FROM black_sheep.User_Table) a " +
+                               "GROUP BY age_group ";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader;
+   
+
                 try
                 {
                     reader = cmd.ExecuteReader();
 
                     while (reader.Read())
                     {
-                        this.chart3.Series["Product_Price"].Points.AddXY(reader.GetString("Product_Name"), reader.GetInt32("Product_Price"));
+                        this.chart3.Series["age_group"].Points.AddXY(reader.GetString("age_group"), reader.GetInt32("count"));
                     }
                 }
 
@@ -98,7 +116,10 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
+
+                string query;
                 MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+                
                 MySqlDataReader reader;
                 try
                 {
