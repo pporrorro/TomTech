@@ -132,7 +132,7 @@
             series2.IsXValueIndexed = true;
             series2.LabelForeColor = System.Drawing.Color.White;
             series2.Legend = "Legend1";
-            series2.Name = "Product_Price";
+            series2.Name = "age_group";
             this.chart3.Series.Add(series2);
             this.chart3.Size = new System.Drawing.Size(699, 388);
             this.chart3.TabIndex = 21;
