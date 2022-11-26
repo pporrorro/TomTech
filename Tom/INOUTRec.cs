@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading.Tasks2;
+using System.Threading.Tasks3;
 
 namespace SecondTombuyScreen
 {
@@ -17,5 +19,6 @@ namespace SecondTombuyScreen
 public string Place2              = "";
         public string In_Time            = "";
         public string Out_Time           = "";
+ 	public string Out_Time2           = "";
     }
 }
