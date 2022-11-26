@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using SecondTombuyScreen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -118,6 +119,7 @@ namespace ModernUI_SnapWindow
         private void btnMenu_Click_1(object sender, EventArgs e)
         {
             
+
             if (tableLayoutPanel_bg.ColumnStyles[0].Width == menu_width)
             {
                 tableLayoutPanel_bg.ColumnStyles[0].Width = panel1.Width = 100;

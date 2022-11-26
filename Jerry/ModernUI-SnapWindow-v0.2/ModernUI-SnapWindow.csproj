@@ -223,5 +223,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tom\ShopperScreen\SecondTombuyScreen\ShopperScreen.csproj">
+      <Project>{1a47e8e2-433b-40c3-ac91-3ac0e6e7d1ee}</Project>
+      <Name>ShopperScreen</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
