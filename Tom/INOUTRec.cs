@@ -14,6 +14,7 @@ namespace SecondTombuyScreen
         public string InProduct_Number   = "";
         public string OutProduct_Number  = "";
         public string Place              = "";
+public string Place2              = "";
         public string In_Time            = "";
         public string Out_Time           = "";
     }
