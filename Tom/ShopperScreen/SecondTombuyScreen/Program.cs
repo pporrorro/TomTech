@@ -16,8 +16,8 @@ namespace SecondTombuyScreen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ProductManage());
-            //Application.Run(new Form1());
+            //Application.Run(new ProductManage());
+            Application.Run(new Form1());
         }
     }
 }
