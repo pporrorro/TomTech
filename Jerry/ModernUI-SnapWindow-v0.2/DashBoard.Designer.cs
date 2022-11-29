@@ -104,7 +104,7 @@
             series1.IsXValueIndexed = true;
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
-            series1.Name = "Product_Price";
+            series1.Name = "월별건수";
             this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(699, 388);
             this.chart1.TabIndex = 23;
@@ -132,7 +132,7 @@
             series2.IsXValueIndexed = true;
             series2.LabelForeColor = System.Drawing.Color.White;
             series2.Legend = "Legend1";
-            series2.Name = "age_group";
+            series2.Name = "연령";
             this.chart3.Series.Add(series2);
             this.chart3.Size = new System.Drawing.Size(699, 388);
             this.chart3.TabIndex = 21;

@@ -30,12 +30,12 @@ namespace ModernUI_SnapWindow
             DataGridView();
             PieChart();
             LiveChartSource();
-            GraphChart();
+            MonthDataChart();
         }
 
         private void DataGridView() // 데이터 그리드 뷰 기능
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -66,9 +66,7 @@ namespace ModernUI_SnapWindow
 
         private void PieChart() // 파이 차트 데이터 기능
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
-
-
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
@@ -76,12 +74,12 @@ namespace ModernUI_SnapWindow
 
                 string query = "SELECT a.*, " +
                                "CASE " +
-                               "WHEN age < 20 THEN '10' " +
-                               "WHEN age< 30 THEN '20' " +
-                               "WHEN age< 40 THEN '30' " +
-                               "WHEN age< 50 THEN '40' " +
-                               "WHEN age< 60 THEN '50' " +
-                               "WHEN age< 70 THEN '60' " +
+                               "WHEN age < 20 THEN '10대' " +
+                               "WHEN age < 30 THEN '20대' " +
+                               "WHEN age < 40 THEN '30대' " +
+                               "WHEN age < 50 THEN '40대' " +
+                               "WHEN age < 60 THEN '50대' " +
+                               "WHEN age < 70 THEN '60대' " +
                                "END AS age_group, " +
                                "count(*) as count " +
                                "FROM(SELECT *, FLOOR(date_format(now(), '%Y') - substring(birth, 1, 4)) age FROM black_sheep.User_Table) a " +
@@ -97,7 +95,7 @@ namespace ModernUI_SnapWindow
 
                     while (reader.Read())
                     {
-                        this.chart3.Series["age_group"].Points.AddXY(reader.GetString("age_group"), reader.GetInt32("count"));
+                        this.chart3.Series["연령"].Points.AddXY(reader.GetString("age_group"), reader.GetInt32("count"));
                     }
                 }
 
@@ -109,16 +107,19 @@ namespace ModernUI_SnapWindow
 
         }
 
-        private void GraphChart() // 그래프차트 데이터 기능
+        private void MonthDataChart() // 그래프차트 데이터 기능
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
 
-                string query;
-                MySqlCommand cmd = new MySqlCommand("select * from black_sheep.ItemMaster", conn);
+                string query = "SELECT count(*) a , month(Order_time) FROM black_sheep.OrderList " +
+                    "group by month(Order_time); ";
+                               
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
                 
                 MySqlDataReader reader;
                 try
@@ -127,7 +128,7 @@ namespace ModernUI_SnapWindow
 
                     while (reader.Read())
                     {
-                        this.chart1.Series["Product_Price"].Points.AddXY(reader.GetString("Product_Name"), reader.GetInt32("Product_Price"));
+                        this.chart1.Series["월별건수"].Points.AddXY(reader.GetString("month(Order_time)"), reader.GetInt32("a"));
                     }
                 }
 
@@ -156,17 +157,7 @@ namespace ModernUI_SnapWindow
                     "ON A.Region_Name = B.Region_Name " +
                     "GROUP BY Region ";
 
-
-
-//                SELECT B.idRegion_Number as Region, count(A.Order_number) as count
-//FROM black_sheep.OrderList AS A
-//INNER JOIN black_sheep.Region_Number AS B
-//ON A.Region_Name = B.Region_Name
-//GROUP BY Region
-
                 MySqlCommand cmd = new MySqlCommand(query, conn);
-                
-
 
                 MySqlDataReader reader;
                 try
@@ -201,5 +192,7 @@ namespace ModernUI_SnapWindow
             this.panel13.Controls.Add(geoMap);
             geoMap.Dock = DockStyle.Fill;
         }
+
+        
     }
 }

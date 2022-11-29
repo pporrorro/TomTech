@@ -68,6 +68,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(811, 43);
@@ -76,9 +77,11 @@
             this.dataGridView2.RowTemplate.Height = 23;
             this.dataGridView2.Size = new System.Drawing.Size(626, 371);
             this.dataGridView2.TabIndex = 2;
+            this.dataGridView2.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView2_RowPostPaint);
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(91, 460);
@@ -87,9 +90,11 @@
             this.dataGridView3.RowTemplate.Height = 23;
             this.dataGridView3.Size = new System.Drawing.Size(626, 371);
             this.dataGridView3.TabIndex = 3;
+            this.dataGridView3.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView3_RowPostPaint);
             // 
             // dataGridView4
             // 
+            this.dataGridView4.AllowUserToAddRows = false;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(811, 460);
@@ -98,9 +103,12 @@
             this.dataGridView4.RowTemplate.Height = 23;
             this.dataGridView4.Size = new System.Drawing.Size(626, 371);
             this.dataGridView4.TabIndex = 4;
+            this.dataGridView4.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView4_RowPostPaint);
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(91, 43);
@@ -108,6 +116,7 @@
             this.dataGridView5.RowTemplate.Height = 23;
             this.dataGridView5.Size = new System.Drawing.Size(626, 371);
             this.dataGridView5.TabIndex = 5;
+            this.dataGridView5.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView5_RowPostPaint);
             // 
             // DataView
             // 
