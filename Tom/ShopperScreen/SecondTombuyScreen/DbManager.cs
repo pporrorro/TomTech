@@ -278,14 +278,15 @@ namespace SecondTombuyScreen
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-
+                DateTime dtime = new DateTime();
                 while (rdr.Read())
                 {
                     DataRow row = uList.NewRow();
                     row["User_Number"] = (string)rdr["User_Number"];
                     row["User_Name"] = (string)rdr["User_Name"];
                     row["Phone"] = (string)rdr["Phone"];
-                    row["Birth"] = (string)rdr["Birth"];
+                    dtime = (DateTime)rdr["Birth"];
+                    row["Birth"] = dtime.ToString("yyyy-MM-dd HH:mm:ss");
 
                     uList.Rows.Add(row);
                 }
