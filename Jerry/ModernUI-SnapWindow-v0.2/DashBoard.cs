@@ -71,7 +71,7 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-
+                
                 string query = "SELECT a.*, " +
                                "CASE " +
                                "WHEN age < 20 THEN '10대' " +

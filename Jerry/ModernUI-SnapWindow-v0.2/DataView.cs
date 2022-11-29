@@ -36,16 +36,19 @@ namespace ModernUI_SnapWindow
         private void DataGridView1() // 데이터 그리드 뷰 기능 1
         {
             
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name, " +
-                                                    "Place, " +
-                                                    "Stock_Qty, " +
-                                                    "Product_Price " +
+                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
+                                                    "Place AS 장소, " +
+                                                    "Stock_Qty AS 재고, " +
+                                                    "Product_Price AS 가격 " +
                                                     "FROM black_sheep.ItemMaster; ", conn);
+
+                this.dataGridView5.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                this.dataGridView5.RowHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
 
                 dataGridView5.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
 
@@ -86,18 +89,20 @@ namespace ModernUI_SnapWindow
 
         private void DataGridView2() // 데이터 그리드 뷰 기능 2
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name, " +
-                                                    "Place, " +
-                                                    "Stock_Qty, " +
-                                                    "Product_Price " +
+                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
+                                                    "Place AS 장소, " +
+                                                    "Stock_Qty AS 재고, " +
+                                                    "Product_Price AS 가격 " +
                                                     "FROM black_sheep.ItemMaster; ", conn);
 
                 dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                this.dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                this.dataGridView2.RowHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
 
                 for (int i = 1; i < dataGridView2.Rows.Count; i++)
                 {
@@ -136,18 +141,20 @@ namespace ModernUI_SnapWindow
 
         private void DataGridView3() // 데이터 그리드 뷰 기능 3
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name, " +
-                                                    "Place, " +
-                                                    "Stock_Qty, " +
-                                                    "Product_Price " +
+                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
+                                                    "Place AS 장소, " +
+                                                    "Stock_Qty AS 재고, " +
+                                                    "Product_Price AS 가격 " +
                                                     "FROM black_sheep.ItemMaster; ", conn);
 
                 dataGridView3.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                this.dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                this.dataGridView3.RowHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
 
                 for (int i = 1; i < dataGridView3.Rows.Count; i++)
                 {
@@ -186,18 +193,20 @@ namespace ModernUI_SnapWindow
 
         private void DataGridView4() // 데이터 그리드 뷰 기능 4
         {
-            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;";
+            string strConn = "Server=222.98.255.30;Database=black_sheep;Uid=root;Pwd=qmffortlq;CharSet=utf8;";
 
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name, " +
-                                                    "Place, " +
-                                                    "Stock_Qty, " +
-                                                    "Product_Price " +
+                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
+                                                    "Place AS 장소, " +
+                                                    "Stock_Qty AS 재고, " +
+                                                    "Product_Price AS 가격 " +
                                                     "FROM black_sheep.ItemMaster; ", conn);
 
                 dataGridView4.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+                this.dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
+                this.dataGridView4.RowHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
 
                 for (int i = 1; i < dataGridView4.Rows.Count; i++)
                 {
