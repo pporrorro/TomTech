@@ -46,11 +46,9 @@
             this.groupBox1.Controls.Add(this.lblProductPrice);
             this.groupBox1.Controls.Add(this.numCount1);
             this.groupBox1.Font = new System.Drawing.Font("굴림", 12F);
-            this.groupBox1.Location = new System.Drawing.Point(147, 4);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Location = new System.Drawing.Point(129, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(342, 133);
+            this.groupBox1.Size = new System.Drawing.Size(299, 106);
             this.groupBox1.TabIndex = 79;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Product_Name";
@@ -58,62 +56,61 @@
             // lblLeftCount
             // 
             this.lblLeftCount.AutoSize = true;
-            this.lblLeftCount.Location = new System.Drawing.Point(246, 76);
+            this.lblLeftCount.Location = new System.Drawing.Point(215, 61);
             this.lblLeftCount.Name = "lblLeftCount";
-            this.lblLeftCount.Size = new System.Drawing.Size(42, 20);
+            this.lblLeftCount.Size = new System.Drawing.Size(31, 16);
             this.lblLeftCount.TabIndex = 76;
             this.lblLeftCount.Text = "500";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 47);
+            this.label2.Location = new System.Drawing.Point(183, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
+            this.label2.Size = new System.Drawing.Size(88, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "재고량 (개)";
             // 
             // lblProductPrice
             // 
             this.lblProductPrice.AutoSize = true;
-            this.lblProductPrice.Location = new System.Drawing.Point(31, 59);
+            this.lblProductPrice.Location = new System.Drawing.Point(27, 47);
             this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(73, 20);
+            this.lblProductPrice.Size = new System.Drawing.Size(55, 16);
             this.lblProductPrice.TabIndex = 0;
             this.lblProductPrice.Text = "2000원";
             // 
             // numCount1
             // 
-            this.numCount1.Location = new System.Drawing.Point(122, 57);
-            this.numCount1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.numCount1.Location = new System.Drawing.Point(107, 46);
             this.numCount1.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.numCount1.Name = "numCount1";
-            this.numCount1.Size = new System.Drawing.Size(69, 30);
+            this.numCount1.Size = new System.Drawing.Size(60, 26);
             this.numCount1.TabIndex = 75;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 141);
+            this.pictureBox1.Size = new System.Drawing.Size(123, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 77;
             this.pictureBox1.TabStop = false;
             // 
             // ItemProp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ItemProp";
-            this.Size = new System.Drawing.Size(496, 141);
+            this.Size = new System.Drawing.Size(455, 129);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCount1)).EndInit();
