@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SecondTombuyScreen;
 
 namespace ModernUI_SnapWindow
 {
@@ -17,8 +18,7 @@ namespace ModernUI_SnapWindow
     {
         DashBoard db = null;
         DataView dv = null;
-
-        SecondTombuyScreen.Home3 h3 = null;
+        ProductManageControl pm = null;     
         Home4 h4 = null;
         Home5 h5 = null;
 
@@ -77,7 +77,7 @@ namespace ModernUI_SnapWindow
         {
             db = new DashBoard();
             dv = new DataView();
-            h3 = new SecondTombuyScreen.Home3();
+            pm = new SecondTombuyScreen.ProductManageControl();
             h4 = new Home4();
             h5 = new Home5();
             
@@ -167,8 +167,8 @@ namespace ModernUI_SnapWindow
         {
             label_title.Text = iconButton3.Text;
             tableLayoutPanel_main.Controls.Remove(tableLayoutPanel_main.GetControlFromPosition(0, 1));
-            tableLayoutPanel_main.Controls.Add(h3, 0, 1);
-            h3.Dock = DockStyle.Fill;
+            tableLayoutPanel_main.Controls.Add(pm, 0, 1);
+            pm.Dock = DockStyle.Fill;
         }
 
         private void iconButton4_Click(object sender, EventArgs e)
