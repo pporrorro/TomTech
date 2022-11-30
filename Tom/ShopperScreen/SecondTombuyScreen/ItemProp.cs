@@ -33,6 +33,7 @@ namespace SecondTombuyScreen
             string sProductPrice = lblProductPrice.Text;
             string sLeftCount = lblLeftCount.Text;
             int iOrderCount = (int)numCount1.Value;
+            
 
             im = _im;
 

@@ -57,16 +57,21 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.36601F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.63399F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 92.66771F));
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1337, 657);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -85,7 +90,7 @@
             this.tableLayoutPanel_pList.Name = "tableLayoutPanel_pList";
             this.tableLayoutPanel_pList.RowCount = 1;
             this.tableLayoutPanel_pList.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel_pList.Size = new System.Drawing.Size(634, 586);
+            this.tableLayoutPanel_pList.Size = new System.Drawing.Size(595, 532);
             this.tableLayoutPanel_pList.TabIndex = 1;
             // 
             // panel2
@@ -93,9 +98,9 @@
             this.panel2.Controls.Add(this.btnOrderbasketCancel);
             this.panel2.Controls.Add(this.btnPutOrderbasket);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 592);
+            this.panel2.Location = new System.Drawing.Point(3, 538);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(634, 56);
+            this.panel2.Size = new System.Drawing.Size(595, 50);
             this.panel2.TabIndex = 0;
             // 
             // btnPutOrderbasket
@@ -125,12 +130,12 @@
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel_pList, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(33, 33);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.55118F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.448819F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(640, 651);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(601, 591);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -140,12 +145,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.groupBox7, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(649, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(660, 33);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.12598F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 67.87402F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(685, 651);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(643, 591);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // label7
@@ -177,7 +182,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(247, 89);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(306, 21);
+            this.textBox2.Size = new System.Drawing.Size(284, 21);
             this.textBox2.TabIndex = 3;
             // 
             // btnInsertOrder
@@ -193,7 +198,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(244, 38);
+            this.label1.Location = new System.Drawing.Point(261, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 5;
@@ -201,7 +206,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(309, 35);
+            this.textBox3.Location = new System.Drawing.Point(326, 35);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(125, 21);
             this.textBox3.TabIndex = 6;
@@ -227,7 +232,7 @@
             this.groupBox7.Controls.Add(this.label7);
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(597, 184);
+            this.groupBox7.Size = new System.Drawing.Size(597, 183);
             this.groupBox7.TabIndex = 84;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "구매자 정보";
@@ -237,9 +242,9 @@
             this.panel1.Controls.Add(this.txtOrderList);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 212);
+            this.panel1.Location = new System.Drawing.Point(3, 192);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(679, 436);
+            this.panel1.Size = new System.Drawing.Size(637, 396);
             this.panel1.TabIndex = 85;
             // 
             // label3
@@ -253,11 +258,11 @@
             // 
             // txtOrderList
             // 
-            this.txtOrderList.Location = new System.Drawing.Point(23, 27);
+            this.txtOrderList.Location = new System.Drawing.Point(23, 37);
             this.txtOrderList.Multiline = true;
             this.txtOrderList.Name = "txtOrderList";
             this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtOrderList.Size = new System.Drawing.Size(574, 392);
+            this.txtOrderList.Size = new System.Drawing.Size(530, 341);
             this.txtOrderList.TabIndex = 85;
             // 
             // ProductManage

@@ -45,7 +45,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.lblProductPrice);
             this.groupBox1.Controls.Add(this.numCount1);
-            this.groupBox1.Font = new System.Drawing.Font("굴림", 12F);
+            this.groupBox1.Font = new System.Drawing.Font("나눔고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox1.Location = new System.Drawing.Point(129, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(299, 106);
@@ -58,7 +58,7 @@
             this.lblLeftCount.AutoSize = true;
             this.lblLeftCount.Location = new System.Drawing.Point(215, 61);
             this.lblLeftCount.Name = "lblLeftCount";
-            this.lblLeftCount.Size = new System.Drawing.Size(31, 16);
+            this.lblLeftCount.Size = new System.Drawing.Size(39, 19);
             this.lblLeftCount.TabIndex = 76;
             this.lblLeftCount.Text = "500";
             // 
@@ -67,7 +67,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(183, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 16);
+            this.label2.Size = new System.Drawing.Size(85, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "재고량 (개)";
             // 
@@ -76,7 +76,7 @@
             this.lblProductPrice.AutoSize = true;
             this.lblProductPrice.Location = new System.Drawing.Point(27, 47);
             this.lblProductPrice.Name = "lblProductPrice";
-            this.lblProductPrice.Size = new System.Drawing.Size(55, 16);
+            this.lblProductPrice.Size = new System.Drawing.Size(64, 19);
             this.lblProductPrice.TabIndex = 0;
             this.lblProductPrice.Text = "2000원";
             // 

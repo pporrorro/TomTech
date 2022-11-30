@@ -61,14 +61,14 @@
             this.comboBox1.Location = new System.Drawing.Point(104, 90);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(125, 20);
+            this.comboBox1.Size = new System.Drawing.Size(125, 25);
             this.comboBox1.TabIndex = 7;
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(309, 35);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(125, 21);
+            this.textBox3.Size = new System.Drawing.Size(125, 25);
             this.textBox3.TabIndex = 6;
             // 
             // label1
@@ -76,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(244, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.Size = new System.Drawing.Size(64, 17);
             this.label1.TabIndex = 5;
             this.label1.Text = "회원번호";
             // 
@@ -94,14 +94,14 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(247, 89);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(306, 21);
+            this.textBox2.Size = new System.Drawing.Size(306, 25);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(104, 35);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 21);
+            this.textBox1.Size = new System.Drawing.Size(125, 25);
             this.textBox1.TabIndex = 2;
             // 
             // label7
@@ -109,7 +109,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(38, 38);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.Size = new System.Drawing.Size(64, 17);
             this.label7.TabIndex = 0;
             this.label7.Text = "회원이름";
             // 
@@ -123,9 +123,10 @@
             this.groupBox7.Controls.Add(this.textBox1);
             this.groupBox7.Controls.Add(this.label4);
             this.groupBox7.Controls.Add(this.label7);
+            this.groupBox7.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(597, 184);
+            this.groupBox7.Size = new System.Drawing.Size(585, 163);
             this.groupBox7.TabIndex = 84;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "구매자 정보";
@@ -135,13 +136,13 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(65, 93);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(36, 17);
             this.label4.TabIndex = 1;
             this.label4.Text = "주소";
             // 
             // txtOrderList
             // 
-            this.txtOrderList.Location = new System.Drawing.Point(23, 27);
+            this.txtOrderList.Location = new System.Drawing.Point(23, 48);
             this.txtOrderList.Multiline = true;
             this.txtOrderList.Name = "txtOrderList";
             this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -151,9 +152,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.Location = new System.Drawing.Point(21, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 12);
+            this.label3.Size = new System.Drawing.Size(96, 17);
             this.label3.TabIndex = 86;
             this.label3.Text = "장바구니 정보";
             // 
@@ -200,6 +202,7 @@
             // 
             // btnOrderbasketCancel
             // 
+            this.btnOrderbasketCancel.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnOrderbasketCancel.Location = new System.Drawing.Point(312, 5);
             this.btnOrderbasketCancel.Name = "btnOrderbasketCancel";
             this.btnOrderbasketCancel.Size = new System.Drawing.Size(194, 43);
@@ -210,6 +213,7 @@
             // 
             // btnPutOrderbasket
             // 
+            this.btnPutOrderbasket.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnPutOrderbasket.Location = new System.Drawing.Point(74, 7);
             this.btnPutOrderbasket.Name = "btnPutOrderbasket";
             this.btnPutOrderbasket.Size = new System.Drawing.Size(221, 42);
