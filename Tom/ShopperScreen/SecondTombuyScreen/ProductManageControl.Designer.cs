@@ -43,10 +43,10 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_pList = new System.Windows.Forms.TableLayoutPanel();
             this.btnOrderbasketCancel = new System.Windows.Forms.Button();
-            this.btnPutOrderbasket = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPutOrderbasket = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -186,7 +186,7 @@
             this.tableLayoutPanel3.Controls.Add(this.panel1, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.groupBox7, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(650, 23);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(670, 23);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.12598F));
@@ -221,22 +221,11 @@
             this.btnOrderbasketCancel.UseVisualStyleBackColor = true;
             this.btnOrderbasketCancel.Click += new System.EventHandler(this.btnOrderbasketCancel_Click);
             // 
-            // btnPutOrderbasket
-            // 
-            this.btnPutOrderbasket.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPutOrderbasket.Location = new System.Drawing.Point(52, 6);
-            this.btnPutOrderbasket.Name = "btnPutOrderbasket";
-            this.btnPutOrderbasket.Size = new System.Drawing.Size(154, 42);
-            this.btnPutOrderbasket.TabIndex = 82;
-            this.btnPutOrderbasket.Text = "장바구니 담기";
-            this.btnPutOrderbasket.UseVisualStyleBackColor = true;
-            this.btnPutOrderbasket.Click += new System.EventHandler(this.btnPutOrderbasket_Click);
-            // 
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.btnOrderbasketCancel);
             this.panel2.Controls.Add(this.btnPutOrderbasket);
+            this.panel2.Controls.Add(this.btnOrderbasketCancel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 597);
             this.panel2.Name = "panel2";
@@ -250,7 +239,7 @@
             this.tableLayoutPanel2.Controls.Add(this.panel2, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel_pList, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(23, 23);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(43, 23);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.55118F));
@@ -261,11 +250,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.36601F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.63399F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -277,6 +266,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 703);
             this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // btnPutOrderbasket
+            // 
+            this.btnPutOrderbasket.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPutOrderbasket.Location = new System.Drawing.Point(65, 5);
+            this.btnPutOrderbasket.Name = "btnPutOrderbasket";
+            this.btnPutOrderbasket.Size = new System.Drawing.Size(149, 43);
+            this.btnPutOrderbasket.TabIndex = 84;
+            this.btnPutOrderbasket.Text = "장바구니 담기";
+            this.btnPutOrderbasket.UseVisualStyleBackColor = true;
             // 
             // ProductManageControl
             // 
@@ -317,9 +316,9 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_pList;
         private System.Windows.Forms.Button btnOrderbasketCancel;
-        private System.Windows.Forms.Button btnPutOrderbasket;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnPutOrderbasket;
     }
 }

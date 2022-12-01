@@ -97,6 +97,7 @@ namespace ModernUI_SnapWindow
                     while (reader.Read())
                     {
                         this.chart3.Series["연령"].Points.AddXY(reader.GetString("age_group"), reader.GetInt32("count"));
+                        this.chart3.Series["연령"].Points[0].Color = Color.LightSeaGreen;
                     }
                 }
 

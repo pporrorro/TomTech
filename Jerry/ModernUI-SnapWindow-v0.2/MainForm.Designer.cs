@@ -192,7 +192,7 @@ namespace ModernUI_SnapWindow
             this.iconButton3.Size = new System.Drawing.Size(226, 46);
             this.iconButton3.TabIndex = 3;
             this.iconButton3.Tag = "Heart";
-            this.iconButton3.Text = "     Home3";
+            this.iconButton3.Text = "     Order";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = true;
