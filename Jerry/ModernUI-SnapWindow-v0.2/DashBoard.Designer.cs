@@ -52,10 +52,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel13, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,7 +85,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(759, 876);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(775, 876);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // chart1
@@ -106,7 +107,7 @@
             series1.Legend = "Legend1";
             series1.Name = "월별건수";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(699, 388);
+            this.chart1.Size = new System.Drawing.Size(715, 388);
             this.chart1.TabIndex = 23;
             title1.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title1.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -139,7 +140,7 @@
             series2.ShadowColor = System.Drawing.Color.DarkGray;
             series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Double;
             this.chart3.Series.Add(series2);
-            this.chart3.Size = new System.Drawing.Size(699, 388);
+            this.chart3.Size = new System.Drawing.Size(715, 388);
             this.chart3.TabIndex = 21;
             title2.Alignment = System.Drawing.ContentAlignment.TopLeft;
             title2.Font = new System.Drawing.Font("나눔고딕", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -152,7 +153,7 @@
             this.panel13.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel13.Controls.Add(this.label1);
-            this.panel13.Location = new System.Drawing.Point(899, 104);
+            this.panel13.Location = new System.Drawing.Point(844, 104);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(588, 671);
             this.panel13.TabIndex = 20;
