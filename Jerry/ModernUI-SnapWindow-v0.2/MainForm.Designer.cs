@@ -141,7 +141,7 @@ namespace ModernUI_SnapWindow
             this.iconButton5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton5.Size = new System.Drawing.Size(226, 46);
             this.iconButton5.TabIndex = 5;
-            this.iconButton5.Tag = "Music";
+            this.iconButton5.Tag = "Home5";
             this.iconButton5.Text = "     Home5";
             this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -166,7 +166,7 @@ namespace ModernUI_SnapWindow
             this.iconButton4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton4.Size = new System.Drawing.Size(226, 46);
             this.iconButton4.TabIndex = 4;
-            this.iconButton4.Tag = "HCircle";
+            this.iconButton4.Tag = "Home4";
             this.iconButton4.Text = "     Home4";
             this.iconButton4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -191,7 +191,7 @@ namespace ModernUI_SnapWindow
             this.iconButton3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton3.Size = new System.Drawing.Size(226, 46);
             this.iconButton3.TabIndex = 3;
-            this.iconButton3.Tag = "Heart";
+            this.iconButton3.Tag = "Order";
             this.iconButton3.Text = "     Order";
             this.iconButton3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -216,7 +216,7 @@ namespace ModernUI_SnapWindow
             this.iconButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton2.Size = new System.Drawing.Size(226, 46);
             this.iconButton2.TabIndex = 2;
-            this.iconButton2.Tag = "brush";
+            this.iconButton2.Tag = "Data View";
             this.iconButton2.Text = "     Data View";
             this.iconButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -241,7 +241,7 @@ namespace ModernUI_SnapWindow
             this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.iconButton1.Size = new System.Drawing.Size(226, 46);
             this.iconButton1.TabIndex = 1;
-            this.iconButton1.Tag = "Home";
+            this.iconButton1.Tag = "Dash Board";
             this.iconButton1.Text = "     Dash Board";
             this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

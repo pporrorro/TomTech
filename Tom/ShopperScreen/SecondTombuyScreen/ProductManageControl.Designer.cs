@@ -44,9 +44,9 @@
             this.tableLayoutPanel_pList = new System.Windows.Forms.TableLayoutPanel();
             this.btnOrderbasketCancel = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnPutOrderbasket = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnPutOrderbasket = new System.Windows.Forms.Button();
             this.groupBox7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -96,9 +96,10 @@
             // textBox2
             // 
             this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.textBox2.Font = new System.Drawing.Font("나눔고딕", 11F);
             this.textBox2.Location = new System.Drawing.Point(229, 101);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(255, 25);
+            this.textBox2.Size = new System.Drawing.Size(255, 24);
             this.textBox2.TabIndex = 3;
             // 
             // textBox1
@@ -150,12 +151,15 @@
             // 
             // txtOrderList
             // 
+            this.txtOrderList.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtOrderList.Font = new System.Drawing.Font("나눔고딕", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtOrderList.Location = new System.Drawing.Point(23, 48);
             this.txtOrderList.Multiline = true;
             this.txtOrderList.Name = "txtOrderList";
             this.txtOrderList.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtOrderList.Size = new System.Drawing.Size(468, 392);
             this.txtOrderList.TabIndex = 85;
+            this.txtOrderList.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -232,6 +236,17 @@
             this.panel2.Size = new System.Drawing.Size(595, 57);
             this.panel2.TabIndex = 0;
             // 
+            // btnPutOrderbasket
+            // 
+            this.btnPutOrderbasket.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnPutOrderbasket.Location = new System.Drawing.Point(65, 5);
+            this.btnPutOrderbasket.Name = "btnPutOrderbasket";
+            this.btnPutOrderbasket.Size = new System.Drawing.Size(149, 43);
+            this.btnPutOrderbasket.TabIndex = 84;
+            this.btnPutOrderbasket.Text = "장바구니 담기";
+            this.btnPutOrderbasket.UseVisualStyleBackColor = true;
+            this.btnPutOrderbasket.Click += new System.EventHandler(this.btnPutOrderbasket_Click_1);
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -266,16 +281,6 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 703);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // btnPutOrderbasket
-            // 
-            this.btnPutOrderbasket.Font = new System.Drawing.Font("나눔고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnPutOrderbasket.Location = new System.Drawing.Point(65, 5);
-            this.btnPutOrderbasket.Name = "btnPutOrderbasket";
-            this.btnPutOrderbasket.Size = new System.Drawing.Size(149, 43);
-            this.btnPutOrderbasket.TabIndex = 84;
-            this.btnPutOrderbasket.Text = "장바구니 담기";
-            this.btnPutOrderbasket.UseVisualStyleBackColor = true;
             // 
             // ProductManageControl
             // 

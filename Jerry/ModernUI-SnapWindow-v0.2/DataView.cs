@@ -31,6 +31,13 @@ namespace ModernUI_SnapWindow
             DataGridView2();
             DataGridView3();
             DataGridView4();
+
+            Progressbar1();
+            Progressbar2();
+            Progressbar3();
+            Progressbar4();
+
+
         }
 
         private void DataGridView1() // 데이터 그리드 뷰 기능 1
@@ -41,11 +48,9 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
-                                                    "Place AS 장소, " +
-                                                    "Stock_Qty AS 재고, " +
-                                                    "Product_Price AS 가격 " +
-                                                    "FROM black_sheep.ItemMaster; ", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Product_Name AS 제품명, " +
+                                                    "Order_Qty AS 주문개수, " +
+                                                    "Order_Com AS 완료 FROM black_sheep.Sort1; ", conn);
 
                 this.dataGridView5.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
                 this.dataGridView5.RowHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
@@ -94,11 +99,9 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
-                                                    "Place AS 장소, " +
-                                                    "Stock_Qty AS 재고, " +
-                                                    "Product_Price AS 가격 " +
-                                                    "FROM black_sheep.ItemMaster; ", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Product_Name AS 제품명, " +
+                                                    "Order_Qty AS 주문개수, " +
+                                                    "Order_Com AS 완료 FROM black_sheep.Sort2; ", conn);
 
                 dataGridView2.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
                 this.dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
@@ -146,11 +149,9 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
-                                                    "Place AS 장소, " +
-                                                    "Stock_Qty AS 재고, " +
-                                                    "Product_Price AS 가격 " +
-                                                    "FROM black_sheep.ItemMaster; ", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Product_Name AS 제품명, " +
+                                                    "Order_Qty AS 주문개수, " +
+                                                    "Order_Com AS 완료 FROM black_sheep.Sort3; ", conn);
 
                 dataGridView3.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
                 this.dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
@@ -198,11 +199,9 @@ namespace ModernUI_SnapWindow
             using (MySqlConnection conn = new MySqlConnection(strConn))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT  Product_Name AS 제품이름, " +
-                                                    "Place AS 장소, " +
-                                                    "Stock_Qty AS 재고, " +
-                                                    "Product_Price AS 가격 " +
-                                                    "FROM black_sheep.ItemMaster; ", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Product_Name AS 제품명, " +
+                                                    "Order_Qty AS 주문개수, " +
+                                                    "Order_Com AS 완료 FROM black_sheep.Sort1; ", conn);
 
                 dataGridView4.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
                 this.dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 12, FontStyle.Bold);
@@ -294,5 +293,37 @@ namespace ModernUI_SnapWindow
                 brush, e.RowBounds.Location.X + 35, e.RowBounds.Location.Y + 4, drawFormat);
             }
         }
+
+        private void Progressbar1()
+        {
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 200;
+            progressBar1.Step = 10;
+            progressBar1.Value = 100;
+        }
+
+        private void Progressbar2()
+        {
+            progressBar2.Minimum = 0;
+            progressBar2.Maximum = 200;
+            progressBar2.Step = 10;
+            progressBar2.Value = 100;
+        }
+        private void Progressbar3()
+        {
+            progressBar3.Minimum = 0;
+            progressBar3.Maximum = 200;
+            progressBar3.Step = 10;
+            progressBar3.Value = 100;
+        }
+
+        private void Progressbar4()
+        {
+            progressBar4.Minimum = 0;
+            progressBar4.Maximum = 200;
+            progressBar4.Step = 10;
+            progressBar4.Value = 100;
+        }
+
     }
 }

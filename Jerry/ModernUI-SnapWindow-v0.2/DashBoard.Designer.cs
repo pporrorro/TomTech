@@ -109,7 +109,6 @@
             series1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             series1.IsValueShownAsLabel = true;
             series1.IsXValueIndexed = true;
-            series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
             series1.Name = "월별건수";
             this.chart1.Series.Add(series1);

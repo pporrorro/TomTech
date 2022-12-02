@@ -97,6 +97,7 @@ namespace SecondTombuyScreen
             txtOrderList.Text = "";
             txtOrderList.Text = "  장바구니에 아무것도 없습니다. \r\n";
             iTotalPrice = 0;
+            
         }
         string orderStr = "";
 
@@ -105,7 +106,7 @@ namespace SecondTombuyScreen
             try
             {
                 txtOrderList.Text = " ";
-
+                
 
                 orderStr += "\r\n--------------- 장바구니 담긴 내역 ---------------\r\n\r\n";
 
@@ -160,8 +161,11 @@ namespace SecondTombuyScreen
                     orderStr += "\r\n  장바구니 총 합계 금액 : " + iTotalPrice + " 원 \r\n";
                 }
 
+                txtOrderList.TextAlign = HorizontalAlignment.Center;
                 txtOrderList.Text = orderStr; // 내역 출력
                 orderStr = string.Empty;
+
+                
             }
             catch (Exception ex)
             {
@@ -272,6 +276,75 @@ namespace SecondTombuyScreen
                 }
                 MessageBox.Show("주문이 완료되었습니다.");
                 txtOrderList.Text = sep + "주문내역" + sep + contents + $"\r\n                                                                   총 주문 금액  {iTotalPrice}  원                                                                   \r\n";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex));
+            }
+        }
+
+        private void btnPutOrderbasket_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                txtOrderList.Text = " ";
+
+
+                orderStr += "\r\n--------------- 장바구니 담긴 내역 ---------------\r\n\r\n";
+
+                // ItemProp 확인해서 딕셔너리 Basket 에 주문수량 담기
+                foreach (ItemProp ip in iPList)
+                {
+                    string sProductName = ip.groupBox1.Text;                // 상품이름
+                    string sProductPrice = ip.lblProductPrice.Text;         // 상품가격
+                    int iLeftCount = Convert.ToInt32(ip.lblLeftCount.Text); // 재고량
+                    int iOrderCount = (int)ip.numCount1.Value;              // 주문량
+
+                    sProductPrice = sProductPrice.Substring(0, sProductPrice.Length - 1);
+                    int iProductPrice = Convert.ToInt32(sProductPrice);     //
+
+                    if (iLeftCount - iOrderCount < 0)
+                    {
+                        MessageBox.Show($"{sProductName} 의 재고물품이 부족합니다.");
+                        orderStr = "";
+                        return;
+                    }
+
+                    if (iOrderCount > 0)
+                    {
+                        if (Basket.ContainsKey(sProductName)) Basket[sProductName] += iOrderCount;
+                        else
+                        {
+                            Basket.Add(sProductName, iOrderCount);
+                        }
+                        // orderStr += $"  {sProductName}    {iProductPrice}    {iOrderCount}  개\r\n";
+
+                    }
+
+                    iTotalPrice += iOrderCount * iProductPrice;
+                    ip.numCount1.Value = 0;
+                }
+
+                if (iTotalPrice <= 0)
+                {
+                    MessageBox.Show("장바구니에 담은 내역이 없습니다.\r\n");
+                    return;
+                }
+                else
+                {
+                    // 여태까지 장바구니에 담긴 내역 출력
+                    foreach (string key in Basket.Keys)
+                    {
+                        int iPrice = pi.SelectPrice(key);
+                        orderStr += $"  {key}    {iPrice}  원  {Basket[key]}  개  \r\n";
+                    }
+
+                    // 합계
+                    orderStr += "\r\n  장바구니 총 합계 금액 : " + iTotalPrice + " 원 \r\n";
+                }
+
+                txtOrderList.Text = orderStr; // 내역 출력
+                orderStr = string.Empty;
             }
             catch (Exception ex)
             {
