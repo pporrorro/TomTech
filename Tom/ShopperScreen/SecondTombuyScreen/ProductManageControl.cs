@@ -256,16 +256,8 @@ namespace SecondTombuyScreen
 
                         if (foo == true)
                         {
-                            // 주문한 총 개수
-                            foreach (OrderList o in oList)
-                            {
-                                if (o.Product_Code == sproductCode)
-                                {
-                                    int iPrice = pi.SelectPrice(o.Product_Code);
-                                    contents += "\r\n  " + sproductName + "  " + iPrice + "원  " + orderCnt.ToString() + "개";
-                                    iTotalPrice += iPrice * orderCnt;
-                                }
-                            }
+                            MessageBox.Show("주문성공");
+
                         }
                         else
                         {
